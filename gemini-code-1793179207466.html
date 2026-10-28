@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNIT 1 - TEST 1 (40 Câu) - Ms Lê Hằng English</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #8854C0;
+      --secondary: #FDCB6E;
+      --accent: #00C9A7;
+      --success: #00D26A;
+      --danger: #FF4757;
+      --bg-card: #FFFFFF;
+      --text-main: #2D3436;
+      --border-color: #E2E8F0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+    body {
+      font-family: 'Nunito', 'Quicksand', sans-serif;
+      min-height: 100vh;
+      color: var(--text-main);
+      background: linear-gradient(-45deg, #8854C0, #FDCB6E, #00C9A7, #a8c0ff, #fed6e3);
+      background-size: 400% 400%;
+      animation: gradientBG 12s ease infinite;
+      position: relative;
+      overflow-x: hidden;
+      padding-bottom: 120px;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .bg-pattern { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; overflow: hidden; }
+    .floating-item { position: absolute; opacity: 0.45; animation: floatAround 10s infinite ease-in-out alternate; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.08)); }
+    @keyframes floatAround {
+      0% { transform: translateY(0) translateX(0) rotate(0deg) scale(0.95); }
+      50% { transform: translateY(-30px) translateX(15px) rotate(15deg) scale(1.08); }
+      100% { transform: translateY(20px) translateX(-15px) rotate(-15deg) scale(0.95); }
+    }
+
+    .bottom-railway { position: fixed; bottom: 0; left: 0; width: 100%; height: 44px; background: #2C3E50; border-top: 5px solid #27AE60; z-index: 9; display: flex; align-items: center; overflow: hidden; box-shadow: 0 -4px 15px rgba(0,0,0,0.15); }
+    .railway-lines { width: 200%; height: 6px; background: repeating-linear-gradient(90deg, #FFFFFF, #FFFFFF 30px, transparent 30px, transparent 60px); animation: moveRoad 3s linear infinite; }
+    @keyframes moveRoad { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .animated-train { position: fixed; bottom: 10px; left: -150px; font-size: 28px; z-index: 10; animation: driveTrain 18s linear infinite; }
+    @keyframes driveTrain { 0% { left: -120px; } 100% { left: 105vw; } }
+
+    .container { max-width: 900px; margin: 0 auto; padding: 14px 16px 50px; position: relative; z-index: 10; }
+
+    .top-progress-bar { position: sticky; top: 10px; z-index: 100; background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(12px); padding: 10px 18px; border-radius: 50px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 14px; margin-bottom: 16px; border: 2px solid #FFF; }
+    .score-badge { display: flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 30px; font-weight: 800; font-size: 15px; color: #FFF; white-space: nowrap; }
+    .badge-star { background: linear-gradient(135deg, #FF6B8B, #FF8E53); }
+    .badge-check { background: linear-gradient(135deg, #00D26A, #00B894); }
+    .progress-track { flex: 1; height: 16px; background: #E2E8F0; border-radius: 20px; overflow: hidden; border: 2px solid #FFF; }
+    .progress-fill { width: 0%; height: 100%; background: linear-gradient(90deg, #FDCB6E, #00C9A7, #00D26A); border-radius: 20px; transition: width 0.4s ease; }
+
+    .warning-banner { background: linear-gradient(135deg, #FFF0F2 0%, #FFF5EB 100%); border: 2px solid #FF7675; border-left: 8px solid #FF4757; border-radius: 18px; padding: 14px 18px; margin-bottom: 20px; box-shadow: 0 6px 16px rgba(255, 71, 87, 0.15); }
+    .warning-title { color: #D63031; font-weight: 900; font-size: 15px; display: flex; align-items: center; gap: 8px; margin-bottom: 6px; text-transform: uppercase; }
+    .warning-text { color: #4A4A4A; font-size: 14.5px; line-height: 1.55; font-weight: 600; }
+    .warning-highlight { color: #C0392B; font-weight: 800; }
+
+    .hero-card { background: #FFFFFF; border-radius: 26px; padding: 22px 26px; box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08); margin-bottom: 22px; display: flex; align-items: center; justify-content: space-between; border: 3px solid #F0F3F8; }
+    .hero-tag { display: inline-flex; align-items: center; gap: 6px; background: linear-gradient(135deg, #0984E3, #00CEC9); color: #FFF; padding: 4px 12px; border-radius: 20px; font-size: 12.5px; font-weight: 800; margin-bottom: 8px; }
+    .hero-title { font-size: 25px; font-weight: 900; background: linear-gradient(135deg, #0984E3, #6C5CE7, #E84393); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 6px; }
+    .hero-sub { color: #636E72; font-size: 13.5px; font-weight: 700; margin-bottom: 10px; }
+    .hero-teacher-pill { display: inline-flex; align-items: center; gap: 6px; background: #F8E7F6; color: #8854C0; padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 800; border: 1.5px solid #E8C6EF; }
+
+    .section-badge-card { background: linear-gradient(135deg, #6C5CE7, #8854C0); color: #FFF; border-radius: 18px; padding: 12px 18px; margin: 28px 0 16px; font-weight: 900; font-size: 16px; display: flex; align-items: center; gap: 10px; box-shadow: 0 6px 16px rgba(108, 92, 231, 0.25); border: 2px solid rgba(255,255,255,0.4); }
+
+    .question-card { background: var(--bg-card); border-radius: 24px; padding: 22px; margin-bottom: 22px; box-shadow: 0 10px 25px rgba(0,0,0,0.07); border: 2.5px solid #EDF2F7; }
+    .q-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+    .q-number-pill { background: #8854C0; color: #FFF; font-weight: 900; padding: 4px 14px; border-radius: 14px; font-size: 13px; box-shadow: 0 3px 0 #5E358A; }
+    .q-type-pill { background: #E8F0FE; color: #1A73E8; font-weight: 700; padding: 4px 12px; border-radius: 12px; font-size: 12px; }
+    .q-text { font-size: 16px; font-weight: 700; color: #2D3436; line-height: 1.55; margin-bottom: 16px; }
+
+    .options-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 14px; }
+    @media (min-width: 620px) { .options-grid { grid-template-columns: 1fr 1fr; } }
+
+    .option-btn { position: relative; display: flex; align-items: center; gap: 12px; padding: 13px 16px; background: #FFFFFF; border: 2px solid var(--border-color); border-bottom: 5px solid #CBD5E1; border-radius: 18px; cursor: pointer; font-size: 15px; font-weight: 700; color: #2D3436; text-align: left; transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease; width: 100%; }
+    .option-btn:hover:not(.disabled) { transform: scale(1.02) translateY(-2px); border-color: #8854C0; background: #FDFBFF; }
+    .option-btn:active:not(.disabled) { transform: translateY(2px); border-bottom-width: 2px; }
+    .opt-letter { width: 32px; height: 32px; border-radius: 10px; background: #F1F2F6; display: flex; align-items: center; justify-content: center; font-weight: 900; color: #57606F; flex-shrink: 0; font-size: 14px; }
+
+    .option-btn.correct {
+      background: #EAFDF3 !important;
+      border-color: #00D26A !important;
+      border-bottom: 5px solid #00A352 !important;
+      color: #005A2B !important;
+      font-weight: 900 !important;
+    }
+    .option-btn.correct .opt-letter { background: #00D26A !important; color: #FFF !important; }
+    .option-btn.correct .opt-text { font-weight: 900 !important; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+
+    .option-btn.highlight-correct-answer {
+      background: #D3F9E3 !important;
+      border: 2.5px solid #00D26A !important;
+      border-bottom: 5px solid #008F47 !important;
+      color: #004D25 !important;
+      font-weight: 900 !important;
+      box-shadow: 0 0 15px rgba(0, 210, 106, 0.45) !important;
+      transform: scale(1.02);
+      opacity: 1 !important;
+    }
+    .option-btn.highlight-correct-answer .opt-letter { background: #00D26A !important; color: #FFF !important; }
+    .option-btn.highlight-correct-answer .opt-text { font-weight: 900 !important; }
+    .option-btn.highlight-correct-answer::after {
+      content: "✓ ĐÁP ÁN ĐÚNG";
+      margin-left: auto;
+      background: #00D26A;
+      color: #FFF;
+      font-size: 11px;
+      font-weight: 900;
+      padding: 3px 8px;
+      border-radius: 8px;
+      white-space: nowrap;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.12);
+    }
+
+    .option-btn.wrong {
+      background: #FFF1F2 !important;
+      border-color: #FF4757 !important;
+      border-bottom: 5px solid #D63031 !important;
+      color: #C0392B !important;
+      animation: shake 0.45s ease;
+    }
+    .option-btn.wrong .opt-letter { background: #FF4757; color: #FFF; }
+    .option-btn.disabled { cursor: default; opacity: 0.85; }
+
+    @keyframes shake { 0%, 100% { transform: translateX(0); } 20% { transform: translateX(-8px); } 40% { transform: translateX(8px); } 60% { transform: translateX(-6px); } 80% { transform: translateX(6px); } }
+
+    .explanation-box { display: none; background: #FAFBFF; border: 2px dashed #8854C0; border-radius: 20px; padding: 18px 20px; margin-top: 16px; animation: fadeIn 0.3s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    .exp-title { color: #FF4757; font-size: 16px; font-weight: 900; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.4px; }
+    .translation-bar { background: #FFF8E7; border-left: 5px solid #FDCB6E; border-radius: 12px; padding: 10px 14px; color: #2D3436; font-size: 14.5px; font-weight: 700; margin-bottom: 14px; line-height: 1.5; }
+    .step-label { font-size: 14.5px; font-weight: 800; color: #2D3436; margin-bottom: 8px; }
+    .exp-grid { display: grid; grid-template-columns: 1fr; gap: 8px; margin-bottom: 14px; }
+    @media (min-width: 600px) { .exp-grid { grid-template-columns: 1fr 1fr; } }
+    .exp-item-card { background: #FFFFFF; border: 1.5px solid #E2E8F0; border-radius: 12px; padding: 9px 12px; font-size: 13.5px; line-height: 1.45; }
+    .opt-name { font-weight: 800; color: #0984E3; margin-right: 5px; }
+    .badge-pill { display: inline-block; font-size: 11px; font-weight: 800; padding: 2px 7px; border-radius: 6px; margin-right: 5px; }
+    .badge-pill.bad { background: #FFE8E6; color: #FF4757; }
+    .badge-pill.good { background: #E3FAEC; color: #00B894; }
+    .why-correct-box { background: #F0FFF4; border: 1.5px solid #C6F6D5; border-radius: 14px; padding: 11px 15px; margin-bottom: 10px; color: #22543D; font-size: 14px; line-height: 1.55; font-weight: 600; }
+    .why-wrong-box { background: #FFF5F5; border: 1.5px solid #FED7D7; border-radius: 14px; padding: 11px 15px; color: #742A2A; font-size: 14px; line-height: 1.55; font-weight: 600; }
+    .highlight-rule { background: #FEFCBF; color: #744210; padding: 2px 8px; border-radius: 6px; font-weight: 800; }
+    .highlight-target { color: #00A352; font-weight: 800; }
+
+    .submit-bar { text-align: center; margin-top: 36px; }
+    .btn-submit { background: linear-gradient(135deg, #FF6B8B, #FF8E53); color: #FFF; border: none; border-bottom: 6px solid #D63031; border-radius: 25px; padding: 16px 42px; font-size: 19px; font-weight: 900; cursor: pointer; box-shadow: 0 10px 25px rgba(255, 107, 139, 0.35); display: inline-flex; align-items: center; gap: 10px; transition: transform 0.2s; }
+    .btn-submit:hover { transform: scale(1.03) translateY(-2px); }
+
+    .promo-banner { background: linear-gradient(135deg, #D63031 0%, #E84393 50%, #0984E3 100%); border-radius: 22px; padding: 22px 24px; color: #FFF; box-shadow: 0 10px 25px rgba(232, 67, 147, 0.25); margin-top: 36px; text-align: center; border: 2px solid rgba(255,255,255,0.4); }
+    .promo-title { font-size: 17px; font-weight: 900; margin-bottom: 10px; line-height: 1.5; }
+    .promo-phone-pill { display: inline-flex; align-items: center; gap: 8px; background: #FFFFFF; color: #D63031; padding: 8px 22px; border-radius: 25px; font-weight: 900; font-size: 18px; margin: 4px 0 10px; }
+    .promo-sub { font-size: 14.5px; font-weight: 700; }
+
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(8px); z-index: 1000; align-items: center; justify-content: center; padding: 20px; }
+    .modal-card { background: #FFFFFF; width: 100%; max-width: 520px; border-radius: 28px; padding: 32px 26px; text-align: center; border: 4px solid #FDCB6E; }
+    .modal-score { font-size: 40px; font-weight: 900; color: #8854C0; margin-bottom: 6px; }
+    .modal-feedback { background: #F8F9FA; border-left: 5px solid #8854C0; border-radius: 14px; padding: 16px; margin: 18px 0; font-size: 15px; line-height: 1.55; color: #2D3436; font-weight: 700; text-align: left; }
+    .btn-retry { background: linear-gradient(135deg, #00C9A7, #00B894); color: #FFF; border: none; border-bottom: 5px solid #008f72; border-radius: 20px; padding: 14px 34px; font-size: 17px; font-weight: 800; cursor: pointer; }
+    #confetti-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 999; }
+  </style>
+</head>
+<body>
+
+  <!-- HỌA TIẾT SVG LƠ LỬNG VUI NHỘN -->
+  <div class="bg-pattern">
+    <svg class="floating-item" style="top: 6%; left: 4%; width: 46px; height: 46px;" viewBox="0 0 24 24" fill="#FDCB6E"><path d="M12 1.5l3.09 6.26L22 8.77l-5 4.87 1.18 6.86L12 17.27l-6.18 3.23L7 13.64l-5-4.87 6.91-1.01L12 1.5z"/></svg>
+    <svg class="floating-item" style="top: 18%; right: 6%; width: 50px; height: 50px; animation-duration: 13s;" viewBox="0 0 24 24" fill="#FF7675"><circle cx="12" cy="12" r="4" fill="#FDCB6E"/><circle cx="12" cy="5" r="3.5" fill="#FF7675"/><circle cx="19" cy="12" r="3.5" fill="#FF7675"/><circle cx="12" cy="19" r="3.5" fill="#FF7675"/><circle cx="5" cy="12" r="3.5" fill="#FF7675"/></svg>
+    <svg class="floating-item" style="top: 38%; left: 3%; width: 65px; height: 42px; animation-duration: 16s;" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg>
+    <svg class="floating-item" style="top: 58%; right: 5%; width: 52px; height: 52px; animation-duration: 11s;" viewBox="0 0 24 24" fill="#FFF"><path d="M12 3c-4.97 0-9 3.58-9 8 0 2.45 1.25 4.67 3.23 6.13L5 21l4.47-1.49C10.27 19.8 11.12 20 12 20c4.97 0 9-3.58 9-8s-4.03-9-9-9zm-3 8a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm6 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg>
+    <svg class="floating-item" style="top: 78%; left: 5%; width: 45px; height: 45px; animation-duration: 14s;" viewBox="0 0 24 24" fill="#FF4757"><path d="M12 3C8 3 4 7 4 12c0 4.5 4 9 8 9s8-4.5 8-9c0-5-4-9-8-9zm-1-1h2v2h-2V2z"/></svg>
+  </div>
+
+  <div class="bottom-railway"><div class="railway-lines"></div></div>
+  <div class="animated-train">🚇 🚃 🚃</div>
+  <canvas id="confetti-canvas"></canvas>
+
+  <div class="container">
+
+    <div class="top-progress-bar">
+      <div class="score-badge badge-star"><span>⭐</span><span id="starCounter">0</span>/40</div>
+      <div class="progress-track"><div id="progressBarFill" class="progress-fill"></div></div>
+      <div class="score-badge badge-check"><span>✅</span><span id="correctCounter">0</span>/40</div>
+    </div>
+
+    <div class="warning-banner">
+      <div class="warning-title"><span>⚠️</span> LỜI NHẮC CỰC KỲ QUAN TRỌNG <span>⚠️</span></div>
+      <div class="warning-text">
+        Chỉ có <span class="warning-highlight">đọc kỹ giải thích ngay sau mỗi câu</span>, sau đó ghi lại từ vựng/cấu trúc mới vào vở để học thì mới thực sự giỏi lên. Làm cho xong mà không đọc giải thích hay đọc qua loa không ghi chép thì chỉ tốn thời gian vô ích!
+        <br><strong>Kéo tới đâu, làm tới đó! *</strong>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <div>
+        <div class="hero-tag"><span>🌟</span> BÀI KIỂM TRA ĐỊNH KỲ · UNIT 1 - TEST 1 (FAMILY LIFE)</div>
+        <h1 class="hero-title">Unit 1 - Test 1 (Tổng Hợp 40 Câu)</h1>
+        <div class="hero-sub">Family Harmony · Family Trends · Sắp xếp hội thoại · Family Time · Family Traditions · Modern Family</div>
+        <div class="hero-teacher-pill"><span>👩‍🏫</span> Giáo viên tạo: Ms Lê Hằng English</div>
+      </div>
+    </div>
+
+    <!-- TOÀN BỘ 40 CÂU HỎI ĐƯỢC NHÚNG TĨNH TRỰC TIẾP TRONG HTML (KHÔNG DÙNG JS TẠO THẺ) -->
+    <div id="questionsContainer">
+
+      <!-- PART 1: ANNOUNCEMENT (Q1 - Q6) -->
+      <div class="section-badge-card"><span>📢</span><div><div>PART 1: ANNOUNCEMENT CLOZE (QUESTIONS 1 - 6)</div><div style="font-size: 13px; font-weight: 600;">Discover Family Harmony – Your Partner in Creating a Happy Home!</div></div></div>
+
+      <!-- Q1 -->
+      <div class="question-card">
+        <div class="q-header"><span class="q-number-pill">Question 1</span><span class="q-type-pill">PARALLEL STRUCTURE</span></div>
+        <div class="q-text">Ngữ cảnh: "Are you tired of daily housework and (1) __________ you could spend more good time with your loved ones?"</div>
+        <div class="options-grid" id="optgrid_1">
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(1, false, this)"><div class="opt-letter">A</div><div class="opt-text">wishes</div></button>
+          <button class="option-btn" data-correct="true" onclick="chooseAnswer(1, true, this)"><div class="opt-letter">B</div><div class="opt-text">wishing</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(1, false, this)"><div class="opt-letter">C</div><div class="opt-text">wish</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(1, false, this)"><div class="opt-letter">D</div><div class="opt-text">wished</div></button>
+        </div>
+        <div class="explanation-box" id="exp_1">
+          <div class="exp-title">⚡ GIẢI THÍCH CHI TIẾT</div>
+          <div class="translation-bar">💬 <strong>Bước 1 - Dịch câu:</strong> Bạn có mệt mỏi với công việc nhà hàng ngày và đang ao ước (wishing) có thể dành nhiều thời gian tốt đẹp hơn bên những người thân yêu?</div>
+          <div class="step-label">Bước 2 - Phân tích 4 đáp án:</div>
+          <div class="exp-grid">
+            <div class="exp-item-card"><span class="opt-name">wishes (V-es):</span><span class="badge-pill bad">Sai</span>ngôi thứ 3 số ít không đi với "you"</div>
+            <div class="exp-item-card"><span class="opt-name">wishing (V-ing):</span><span class="badge-pill good">Đúng</span>hiện tại phân từ đi chung với "Are you..." ở đầu câu</div>
+            <div class="exp-item-card"><span class="opt-name">wish (V):</span><span class="badge-pill bad">Sai</span>không đi sau trợ động từ "Are you"</div>
+            <div class="exp-item-card"><span class="opt-name">wished (V-ed):</span><span class="badge-pill bad">Sai</span>mang nghĩa bị động</div>
+          </div>
+          <div class="why-correct-box"><strong>Bước 3 - ✅ TẠI SAO ĐÚNG?</strong> <span class="highlight-rule">Cấu trúc song hành với "Are you...":</span> Động từ to be "Are you" dùng chung cho cả hai vế nối bởi "and": <em>Are you [tired of...] and [<span class="highlight-target">wishing</span> you could...]?</em></div>
+          <div class="why-wrong-box"><strong>Bước 4 - ❌ TẠI SAO SAI?</strong> A, C, D không kết hợp ngữ pháp được với "Are you" ở đầu câu hỏi.</div>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="question-card">
+        <div class="q-header"><span class="q-number-pill">Question 2</span><span class="q-type-pill">REDUCED RELATIVE CLAUSE</span></div>
+        <div class="q-text">Ngữ cảnh: "We offer helpful and trusted home support services (2) __________ to truly make things easier and bring peace of mind to your home."</div>
+        <div class="options-grid" id="optgrid_2">
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(2, false, this)"><div class="opt-letter">A</div><div class="opt-text">took</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(2, false, this)"><div class="opt-letter">B</div><div class="opt-text">increased</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(2, false, this)"><div class="opt-letter">C</div><div class="opt-text">boosted</div></button>
+          <button class="option-btn" data-correct="true" onclick="chooseAnswer(2, true, this)"><div class="opt-letter">D</div><div class="opt-text">made</div></button>
+        </div>
+        <div class="explanation-box" id="exp_2">
+          <div class="exp-title">⚡ GIẢI THÍCH CHI TIẾT</div>
+          <div class="translation-bar">💬 <strong>Bước 1 - Dịch câu:</strong> Chúng tôi cung cấp các dịch vụ hỗ trợ gia đình đáng tin cậy được tạo ra/thiết kế (made) để thực sự giúp mọi việc dễ dàng hơn.</div>
+          <div class="step-label">Bước 2 - Phân tích 4 đáp án:</div>
+          <div class="exp-grid">
+            <div class="exp-item-card"><span class="opt-name">took:</span><span class="badge-pill bad">Sai</span>quá khứ đơn của take (lấy)</div>
+            <div class="exp-item-card"><span class="opt-name">increased:</span><span class="badge-pill bad">Sai</span>tăng lên</div>
+            <div class="exp-item-card"><span class="opt-name">boosted:</span><span class="badge-pill bad">Sai</span>thúc đẩy</div>
+            <div class="exp-item-card"><span class="opt-name">made (V3/ed):</span><span class="badge-pill good">Đúng</span>được tạo ra để làm gì (services [which are] made to...)</div>
+          </div>
+          <div class="why-correct-box"><strong>Bước 3 - ✅ TẠI SAO ĐÚNG?</strong> <span class="highlight-rule">Rút gọn MĐQH bị động:</span> <em>services (which are) <span class="highlight-target">made</span> to truly make things easier...</em> (những dịch vụ được tạo ra nhằm mục đích...).</div>
+          <div class="why-wrong-box"><strong>Bước 4 - ❌ TẠI SAO SAI?</strong> took, increased, boosted không phù hợp nghĩa với danh từ "services".</div>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="question-card">
+        <div class="q-header"><span class="q-number-pill">Question 3</span><span class="q-type-pill">PREPOSITION</span></div>
+        <div class="q-text">Ngữ cảnh: "Our friendly team, made of caring and honest workers, offers many types of help based (3) __________ what you need:"</div>
+        <div class="options-grid" id="optgrid_3">
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(3, false, this)"><div class="opt-letter">A</div><div class="opt-text">under</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(3, false, this)"><div class="opt-letter">B</div><div class="opt-text">at</div></button>
+          <button class="option-btn" data-correct="true" onclick="chooseAnswer(3, true, this)"><div class="opt-letter">C</div><div class="opt-text">on</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(3, false, this)"><div class="opt-letter">D</div><div class="opt-text">in</div></button>
+        </div>
+        <div class="explanation-box" id="exp_3">
+          <div class="exp-title">⚡ GIẢI THÍCH CHI TIẾT</div>
+          <div class="translation-bar">💬 <strong>Bước 1 - Dịch câu:</strong> Đội ngũ thân thiện của chúng tôi cung cấp nhiều loại hình trợ giúp dựa trên (based on) những gì bạn cần.</div>
+          <div class="step-label">Bước 2 - Phân tích 4 đáp án:</div>
+          <div class="exp-grid">
+            <div class="exp-item-card"><span class="opt-name">under / at / in:</span><span class="badge-pill bad">Sai</span>không đi với phân từ "based" để chỉ căn cứ</div>
+            <div class="exp-item-card"><span class="opt-name">on (prep):</span><span class="badge-pill good">Đúng</span>based on something (dựa trên cái gì)</div>
+          </div>
+          <div class="why-correct-box"><strong>Bước 3 - ✅ TẠI SAO ĐÚNG?</strong> <span class="highlight-rule">Cụm cố định:</span> <span class="highlight-target">based on something</span> (dựa vào, căn cứ trên nhu cầu của bạn).</div>
+          <div class="why-wrong-box"><strong>Bước 4 - ❌ TẠI SAO SAI?</strong> under, at, in không kết hợp với "based" theo nghĩa này.</div>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="question-card">
+        <div class="q-header"><span class="q-number-pill">Question 4</span><span class="q-type-pill">ADJECTIVE ORDER</span></div>
+        <div class="q-text">Ngữ cảnh: "Helping with (4) __________ to give you more free time."</div>
+        <div class="options-grid" id="optgrid_4">
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(4, false, this)"><div class="opt-letter">A</div><div class="opt-text">daily small jobs</div></button>
+          <button class="option-btn" data-correct="true" onclick="chooseAnswer(4, true, this)"><div class="opt-letter">B</div><div class="opt-text">small daily jobs</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(4, false, this)"><div class="opt-letter">C</div><div class="opt-text">daily jobs small</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(4, false, this)"><div class="opt-letter">D</div><div class="opt-text">jobs small daily</div></button>
+        </div>
+        <div class="explanation-box" id="exp_4">
+          <div class="exp-title">⚡ GIẢI THÍCH CHI TIẾT</div>
+          <div class="translation-bar">💬 <strong>Bước 1 - Dịch câu:</strong> Giúp đỡ những công việc nhỏ hàng ngày (small daily jobs) để mang lại cho bạn nhiều thời gian rảnh hơn.</div>
+          <div class="step-label">Bước 2 - Phân tích 4 đáp án:</div>
+          <div class="exp-grid">
+            <div class="exp-item-card"><span class="opt-name">A, C, D:</span><span class="badge-pill bad">Sai trật tự</span>đặt sai quy tắc trật tự tính từ OSASCOMP</div>
+            <div class="exp-item-card"><span class="opt-name">small daily jobs:</span><span class="badge-pill good">Đúng</span>Kích thước (small) + Tần suất/Loại (daily) + Danh từ chính (jobs)</div>
+          </div>
+          <div class="why-correct-box"><strong>Bước 3 - ✅ TẠI SAO ĐÚNG?</strong> <span class="highlight-rule">Trật tự tính từ OSASCOMP:</span> Tính từ chỉ kích thước (Size: <span class="highlight-target">small</span>) đứng trước tính từ phân loại/tần suất (<span class="highlight-target">daily</span>) + Danh từ chính (<span class="highlight-target">jobs</span>).</div>
+          <div class="why-wrong-box"><strong>Bước 4 - ❌ TẠI SAO SAI?</strong> A, C, D đặt sai vị trí tính từ bổ nghĩa cho danh từ "jobs".</div>
+        </div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="question-card">
+        <div class="q-header"><span class="q-number-pill">Question 5</span><span class="q-type-pill">PASSIVE VOICE</span></div>
+        <div class="q-text">Ngữ cảnh: "When jobs (5) __________ in a smart way, families can enjoy better relationships and feel less stress."</div>
+        <div class="options-grid" id="optgrid_5">
+          <button class="option-btn" data-correct="true" onclick="chooseAnswer(5, true, this)"><div class="opt-letter">A</div><div class="opt-text">are shared</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(5, false, this)"><div class="opt-letter">B</div><div class="opt-text">sharing</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(5, false, this)"><div class="opt-letter">C</div><div class="opt-text">shared</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(5, false, this)"><div class="opt-letter">D</div><div class="opt-text">to share</div></button>
+        </div>
+        <div class="explanation-box" id="exp_5">
+          <div class="exp-title">⚡ GIẢI THÍCH CHI TIẾT</div>
+          <div class="translation-bar">💬 <strong>Bước 1 - Dịch câu:</strong> Khi các công việc được chia sẻ (are shared) một cách thông minh, các gia đình có thể tận hưởng mối quan hệ tốt đẹp hơn và bớt căng thẳng hơn.</div>
+          <div class="step-label">Bước 2 - Phân tích 4 đáp án:</div>
+          <div class="exp-grid">
+            <div class="exp-item-card"><span class="opt-name">are shared:</span><span class="badge-pill good">Đúng</span>Bị động thì hiện tại đơn (to be + V3/ed)</div>
+            <div class="exp-item-card"><span class="opt-name">sharing / shared / to share:</span><span class="badge-pill bad">Sai</span>thiếu trợ động từ to be làm vị ngữ chính cho chủ ngữ "jobs"</div>
+          </div>
+          <div class="why-correct-box"><strong>Bước 3 - ✅ TẠI SAO ĐÚNG?</strong> <span class="highlight-rule">Câu bị động (Passive Voice):</span> Mệnh đề "When + S (jobs) + V" cần động từ chia thì đầy đủ ở thể bị động: <span class="highlight-target">are shared</span>.</div>
+          <div class="why-wrong-box"><strong>Bước 4 - ❌ TẠI SAO SAI?</strong> B, C, D không phải là động từ chia thì đầy đủ sau chủ ngữ "jobs".</div>
+        </div>
+      </div>
+
+      <!-- Q6 -->
+      <div class="question-card">
+        <div class="q-header"><span class="q-number-pill">Question 6</span><span class="q-type-pill">COLLOCATION</span></div>
+        <div class="q-text">Ngữ cảnh: "Instead of worrying about hard work or too many chores, you can now (6) __________ more time making memories and enjoying your family."</div>
+        <div class="options-grid" id="optgrid_6">
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(6, false, this)"><div class="opt-letter">A</div><div class="opt-text">save</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(6, false, this)"><div class="opt-letter">B</div><div class="opt-text">make</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(6, false, this)"><div class="opt-letter">C</div><div class="opt-text">have</div></button>
+          <button class="option-btn" data-correct="true" onclick="chooseAnswer(6, true, this)"><div class="opt-letter">D</div><div class="opt-text">spend</div></button>
+        </div>
+        <div class="explanation-box" id="exp_6">
+          <div class="exp-title">⚡ GIẢI THÍCH CHI TIẾT</div>
+          <div class="translation-bar">💬 <strong>Bước 1 - Dịch câu:</strong> Thay vì lo lắng về công việc vất vả hay quá nhiều việc nhà, giờ đây bạn có thể dành (spend) nhiều thời gian hơn để tạo dựng kỷ niệm và tận hưởng bên gia đình.</div>
+          <div class="step-label">Bước 2 - Phân tích 4 đáp án:</div>
+          <div class="exp-grid">
+            <div class="exp-item-card"><span class="opt-name">save / make / have:</span><span class="badge-pill bad">Sai</span>không đi trực tiếp với cấu trúc "+ time + V-ing" để chỉ dành thời gian làm gì</div>
+            <div class="exp-item-card"><span class="opt-name">spend (v):</span><span class="badge-pill good">Đúng</span>spend time + V-ing (dành thời gian làm gì)</div>
+          </div>
+          <div class="why-correct-box"><strong>Bước 3 - ✅ TẠI SAO ĐÚNG?</strong> <span class="highlight-rule">Cấu trúc spend time + V-ing:</span> Phía sau có "more time <strong>making</strong> memories and <strong>enjoying</strong>...", nên bắt buộc dùng động từ <span class="highlight-target">spend</span>.</div>
+          <div class="why-wrong-box"><strong>Bước 4 - ❌ TẠI SAO SAI?</strong> save, make, have không đi với cấu trúc "+ time + V-ing" theo nghĩa dành thời gian thực hiện hành động.</div>
+        </div>
+      </div>
+
+      <!-- PART 2: FAMILY TRENDS TODAY (Q7 - Q12) -->
+      <div class="section-badge-card"><span>📋</span><div><div>PART 2: LEAFLET CLOZE (QUESTIONS 7 - 12)</div><div style="font-size: 13px; font-weight: 600;">Family Trends Today – How Modern Families Share Responsibilities</div></div></div>
+
+      <!-- Q7 -->
+      <div class="question-card">
+        <div class="q-header"><span class="q-number-pill">Question 7</span><span class="q-type-pill">QUANTIFIER</span></div>
+        <div class="q-text">Ngữ cảnh: "They share a great (7) __________ of household chores to create a happier and healthier home environment."</div>
+        <div class="options-grid" id="optgrid_7">
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(7, false, this)"><div class="opt-letter">A</div><div class="opt-text">load</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(7, false, this)"><div class="opt-letter">B</div><div class="opt-text">part</div></button>
+          <button class="option-btn" data-correct="true" onclick="chooseAnswer(7, true, this)"><div class="opt-letter">C</div><div class="opt-text">deal</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(7, false, this)"><div class="opt-letter">D</div><div class="opt-text">piece</div></button>
+        </div>
+        <div class="explanation-box" id="exp_7">
+          <div class="exp-title">⚡ GIẢI THÍCH CHI TIẾT</div>
+          <div class="translation-bar">💬 <strong>Bước 1 - Dịch câu:</strong> Họ cùng chia sẻ rất nhiều (a great deal of) công việc nhà để tạo nên môi trường gia đình hạnh phúc và lành mạnh hơn.</div>
+          <div class="step-label">Bước 2 - Phân tích 4 đáp án:</div>
+          <div class="exp-grid">
+            <div class="exp-item-card"><span class="opt-name">load / part / piece:</span><span class="badge-pill bad">Sai</span>không tạo thành cụm lượng từ "a great ... of"</div>
+            <div class="exp-item-card"><span class="opt-name">deal:</span><span class="badge-pill good">Đúng</span>a great deal of (rất nhiều)</div>
+          </div>
+          <div class="why-correct-box"><strong>Bước 3 - ✅ TẠI SAO ĐÚNG?</strong> <span class="highlight-rule">Cụm lượng từ cố định:</span> <span class="highlight-target">a great deal of</span> nghĩa là rất nhiều.</div>
+          <div class="why-wrong-box"><strong>Bước 4 - ❌ TẠI SAO SAI?</strong> load, part, piece không kết hợp với "a great ... of".</div>
+        </div>
+      </div>
+
+      <!-- Q8 -->
+      <div class="question-card">
+        <div class="q-header"><span class="q-number-pill">Question 8</span><span class="q-type-pill">PHRASAL VERB</span></div>
+        <div class="q-text">Ngữ cảnh: "Unlike other generations, modern families (8) __________ equality and cooperation."</div>
+        <div class="options-grid" id="optgrid_8">
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(8, false, this)"><div class="opt-letter">A</div><div class="opt-text">get on</div></button>
+          <button class="option-btn" data-correct="true" onclick="chooseAnswer(8, true, this)"><div class="opt-letter">B</div><div class="opt-text">focus on</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(8, false, this)"><div class="opt-letter">C</div><div class="opt-text">depend on</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(8, false, this)"><div class="opt-letter">D</div><div class="opt-text">search for</div></button>
+        </div>
+        <div class="explanation-box" id="exp_8">
+          <div class="exp-title">⚡ GIẢI THÍCH CHI TIẾT</div>
+          <div class="translation-bar">💬 <strong>Bước 1 - Dịch câu:</strong> Không giống như các thế hệ khác, các gia đình hiện đại chú trọng/tập trung vào (focus on) sự bình đẳng và hợp tác.</div>
+          <div class="step-label">Bước 2 - Phân tích 4 đáp án:</div>
+          <div class="exp-grid">
+            <div class="exp-item-card"><span class="opt-name">get on:</span><span class="badge-pill bad">Sai</span>lên xe / xoay xở</div>
+            <div class="exp-item-card"><span class="opt-name">focus on:</span><span class="badge-pill good">Đúng</span>chú trọng, tập trung vào</div>
+            <div class="exp-item-card"><span class="opt-name">depend on:</span><span class="badge-pill bad">Sai</span>phụ thuộc vào</div>
+            <div class="exp-item-card"><span class="opt-name">search for:</span><span class="badge-pill bad">Sai</span>tìm kiếm</div>
+          </div>
+          <div class="why-correct-box"><strong>Bước 3 - ✅ TẠI SAO ĐÚNG?</strong> <span class="highlight-rule">Cụm động từ:</span> <span class="highlight-target">focus on something</span> (tập trung, đề cao sự bình đẳng và hợp tác).</div>
+          <div class="why-wrong-box"><strong>Bước 4 - ❌ TẠI SAO SAI?</strong> get on, depend on, search for không hợp nghĩa của câu.</div>
+        </div>
+      </div>
+
+      <!-- Q9 -->
+      <div class="question-card">
+        <div class="q-header"><span class="q-number-pill">Question 9</span><span class="q-type-pill">PRONOUN</span></div>
+        <div class="q-text">Ngữ cảnh: "While some family members do the heavy lifting, (9) __________ help with cooking, cleaning, or shopping."</div>
+        <div class="options-grid" id="optgrid_9">
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(9, false, this)"><div class="opt-letter">A</div><div class="opt-text">the others</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(9, false, this)"><div class="opt-letter">B</div><div class="opt-text">another</div></button>
+          <button class="option-btn" data-correct="true" onclick="chooseAnswer(9, true, this)"><div class="opt-letter">C</div><div class="opt-text">others</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(9, false, this)"><div class="opt-letter">D</div><div class="opt-text">other</div></button>
+        </div>
+        <div class="explanation-box" id="exp_9">
+          <div class="exp-title">⚡ GIẢI THÍCH CHI TIẾT</div>
+          <div class="translation-bar">💬 <strong>Bước 1 - Dịch câu:</strong> Trong khi một số thành viên gia đình làm việc nặng, những thành viên khác (others) giúp nấu ăn, dọn dẹp hoặc đi chợ.</div>
+          <div class="step-label">Bước 2 - Phân tích 4 đáp án:</div>
+          <div class="exp-grid">
+            <div class="exp-item-card"><span class="opt-name">the others:</span><span class="badge-pill bad">Sai</span>dùng cho nhóm xác định cụ thể</div>
+            <div class="exp-item-card"><span class="opt-name">another:</span><span class="badge-pill bad">Sai</span>số ít không đi với động từ nguyên mẫu "help"</div>
+            <div class="exp-item-card"><span class="opt-name">others:</span><span class="badge-pill good">Đúng</span>đại từ số nhiều (= other family members)</div>
+            <div class="exp-item-card"><span class="opt-name">other:</span><span class="badge-pill bad">Sai</span>tính từ không thể đứng độc lập làm chủ ngữ</div>
+          </div>
+          <div class="why-correct-box"><strong>Bước 3 - ✅ TẠI SAO ĐÚNG?</strong> <span class="highlight-rule">Cấu trúc While some..., others...:</span> Đứng trực tiếp trước động từ số nhiều "help" làm chủ ngữ là đại từ <span class="highlight-target">others</span>.</div>
+          <div class="why-wrong-box"><strong>Bước 4 - ❌ TẠI SAO SAI?</strong> "other" phải có danh từ theo sau; "another" là số ít.</div>
+        </div>
+      </div>
+
+      <!-- Q10 -->
+      <div class="question-card">
+        <div class="q-header"><span class="q-number-pill">Question 10</span><span class="q-type-pill">EXEMPLIFICATION</span></div>
+        <div class="q-text">Ngữ cảnh: "Sharing chores is beneficial for family harmony and helps children develop important life skills (10) __________ responsibility and teamwork."</div>
+        <div class="options-grid" id="optgrid_10">
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(10, false, this)"><div class="opt-letter">A</div><div class="opt-text">for example</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(10, false, this)"><div class="opt-letter">B</div><div class="opt-text">like that</div></button>
+          <button class="option-btn" data-correct="true" onclick="chooseAnswer(10, true, this)"><div class="opt-letter">C</div><div class="opt-text">such as</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(10, false, this)"><div class="opt-letter">D</div><div class="opt-text">as if</div></button>
+        </div>
+        <div class="explanation-box" id="exp_10">
+          <div class="exp-title">⚡ GIẢI THÍCH CHI TIẾT</div>
+          <div class="translation-bar">💬 <strong>Bước 1 - Dịch câu:</strong> Chia sẻ việc nhà giúp trẻ phát triển các kỹ năng sống quan trọng chẳng hạn như (such as) tinh thần trách nhiệm và làm việc nhóm.</div>
+          <div class="step-label">Bước 2 - Phân tích 4 đáp án:</div>
+          <div class="exp-grid">
+            <div class="exp-item-card"><span class="opt-name">for example:</span><span class="badge-pill bad">Sai dấu câu</span>phải có dấu phẩy ngăn cách</div>
+            <div class="exp-item-card"><span class="opt-name">like that / as if:</span><span class="badge-pill bad">Sai</span>như thế / cứ như thể là</div>
+            <div class="exp-item-card"><span class="opt-name">such as:</span><span class="badge-pill good">Đúng</span>chẳng hạn như (liệt kê trực tiếp danh từ làm ví dụ)</div>
+          </div>
+          <div class="why-correct-box"><strong>Bước 3 - ✅ TẠI SAO ĐÚNG?</strong> <span class="highlight-rule">Cấu trúc liệt kê ví dụ:</span> Đứng ngay sau danh từ "life skills" và trước các danh từ ví dụ "responsibility and teamwork" mà không có dấu phẩy là <span class="highlight-target">such as</span>.</div>
+          <div class="why-wrong-box"><strong>Bước 4 - ❌ TẠI SAO SAI?</strong> "for example" cần dấu câu ngăn cách; "as if" đi với mệnh đề.</div>
+        </div>
+      </div>
+
+      <!-- Q11 -->
+      <div class="question-card">
+        <div class="q-header"><span class="q-number-pill">Question 11</span><span class="q-type-pill">VOCABULARY</span></div>
+        <div class="q-text">Ngữ cảnh: "Studies show that families who share tasks equally have stronger communication and closer (11) __________."</div>
+        <div class="options-grid" id="optgrid_11">
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(11, false, this)"><div class="opt-letter">A</div><div class="opt-text">distances</div></button>
+          <button class="option-btn" data-correct="true" onclick="chooseAnswer(11, true, this)"><div class="opt-letter">B</div><div class="opt-text">bonds</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(11, false, this)"><div class="opt-letter">C</div><div class="opt-text">links</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(11, false, this)"><div class="opt-letter">D</div><div class="opt-text">gaps</div></button>
+        </div>
+        <div class="explanation-box" id="exp_11">
+          <div class="exp-title">⚡ GIẢI THÍCH CHI TIẾT</div>
+          <div class="translation-bar">💬 <strong>Bước 1 - Dịch câu:</strong> Các nghiên cứu chỉ ra rằng các gia đình chia sẻ công việc bình đẳng có sự giao tiếp mạnh mẽ hơn và sợi dây gắn kết bền chặt hơn (closer bonds).</div>
+          <div class="step-label">Bước 2 - Phân tích 4 đáp án:</div>
+          <div class="exp-grid">
+            <div class="exp-item-card"><span class="opt-name">distances / gaps:</span><span class="badge-pill bad">Ngược nghĩa</span>khoảng cách</div>
+            <div class="exp-item-card"><span class="opt-name">bonds (n):</span><span class="badge-pill good">Đúng</span>mối gắn kết tình cảm gia đình (family bonds / closer bonds)</div>
+            <div class="exp-item-card"><span class="opt-name">links (n):</span><span class="badge-pill bad">Sai collocation</span>đường dẫn liên kết mạng</div>
+          </div>
+          <div class="why-correct-box"><strong>Bước 3 - ✅ TẠI SAO ĐÚNG?</strong> <span class="highlight-rule">Collocation Unit 1:</span> <span class="highlight-target">closer bonds / family bonds</span> (sự gắn kết tình cảm gia đình).</div>
+          <div class="why-wrong-box"><strong>Bước 4 - ❌ TẠI SAO SAI?</strong> distances và gaps là sự xa cách; links dùng cho đường link hoặc mắt xích.</div>
+        </div>
+      </div>
+
+      <!-- Q12 -->
+      <div class="question-card">
+        <div class="q-header"><span class="q-number-pill">Question 12</span><span class="q-type-pill">VOCABULARY</span></div>
+        <div class="q-text">Ngữ cảnh: "Support each other and be appreciative of everyone's (12) __________."</div>
+        <div class="options-grid" id="optgrid_12">
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(12, false, this)"><div class="opt-letter">A</div><div class="opt-text">actions</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(12, false, this)"><div class="opt-letter">B</div><div class="opt-text">symbols</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(12, false, this)"><div class="opt-letter">C</div><div class="opt-text">characteristics</div></button>
+          <button class="option-btn" data-correct="true" onclick="chooseAnswer(12, true, this)"><div class="opt-letter">D</div><div class="opt-text">efforts</div></button>
+        </div>
+        <div class="explanation-box" id="exp_12">
+          <div class="exp-title">⚡ GIẢI THÍCH CHI TIẾT</div>
+          <div class="translation-bar">💬 <strong>Bước 1 - Dịch câu:</strong> Hãy hỗ trợ lẫn nhau và trân trọng/biết ơn những nỗ lực (efforts) của mỗi người.</div>
+          <div class="step-label">Bước 2 - Phân tích 4 đáp án:</div>
+          <div class="exp-grid">
+            <div class="exp-item-card"><span class="opt-name">actions / symbols / characteristics:</span><span class="badge-pill bad">Sai nghĩa</span>hành động / biểu tượng / đặc điểm</div>
+            <div class="exp-item-card"><span class="opt-name">efforts (n):</span><span class="badge-pill good">Đúng</span>những nỗ lực, công sức đóng góp</div>
+          </div>
+          <div class="why-correct-box"><strong>Bước 3 - ✅ TẠI SAO ĐÚNG?</strong> <span class="highlight-rule">Collocation:</span> <span class="highlight-target">be appreciative of everyone's efforts</span> (biết ơn và trân trọng công sức, nỗ lực làm việc nhà của mọi người).</div>
+          <div class="why-wrong-box"><strong>Bước 4 - ❌ TẠI SAO SAI?</strong> symbols và characteristics sai nghĩa; efforts lột tả chính xác công sức đóng góp.</div>
+        </div>
+      </div>
+
+      <!-- PART 3: ARRANGEMENT (Q13 - Q17) -->
+      <div class="section-badge-card"><span>🔄</span><div><div>PART 3: UTTERANCE & PARAGRAPH ARRANGEMENT (QUESTIONS 13 - 17)</div><div style="font-size: 13px; font-weight: 600;">Sắp xếp hội thoại, email và đoạn văn mạch lạc</div></div></div>
+
+      <!-- Q13 -->
+      <div class="question-card">
+        <div class="q-header"><span class="q-number-pill">Question 13</span><span class="q-type-pill">DIALOGUE ORDER</span></div>
+        <div class="q-text">
+          a. Teacher: That would help. We just want her to feel supported, not overwhelmed.<br>
+          b. Teacher: Lately, Linh seems a bit tired in class. Has she been sleeping well?<br>
+          c. Parent: She's been staying up late to revise. I'll make sure she gets more rest.
+        </div>
+        <div class="options-grid" id="optgrid_13">
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(13, false, this)"><div class="opt-letter">A</div><div class="opt-text">c - a - b</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(13, false, this)"><div class="opt-letter">B</div><div class="opt-text">b - a - c</div></button>
+          <button class="option-btn" data-correct="true" onclick="chooseAnswer(13, true, this)"><div class="opt-letter">C</div><div class="opt-text">b - c - a</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(13, false, this)"><div class="opt-letter">D</div><div class="opt-text">c - b - a</div></button>
+        </div>
+        <div class="explanation-box" id="exp_13">
+          <div class="exp-title">⚡ GIẢI THÍCH CHI TIẾT</div>
+          <div class="translation-bar">💬 <strong>Bước 1 - Dịch hội thoại:</strong> (b) Giáo viên: Dạo này Linh có vẻ hơi mệt trong lớp. Em ấy ngủ có ngon không ạ? -> (c) Phụ huynh: Cháu thức khuya ôn bài đấy cô ạ. Tôi sẽ nhắc cháu nghỉ ngơi nhiều hơn. -> (a) Giáo viên: Thế thì tốt quá. Chúng tôi chỉ muốn em ấy cảm thấy được hỗ trợ chứ không bị quá tải.</div>
+          <div class="why-correct-box"><strong>Bước 3 - ✅ TẠI SAO ĐÚNG?</strong> Giáo viên đặt câu hỏi (b) -> Phụ huynh trả lời (c) -> Giáo viên phản hồi lại (a): <span class="highlight-target">b - c - a</span>.</div>
+          <div class="why-wrong-box"><strong>Bước 4 - ❌ TẠI SAO SAI?</strong> A, B, D đặt sai trình tự hỏi - đáp.</div>
+        </div>
+      </div>
+
+      <!-- Q14 -->
+      <div class="question-card">
+        <div class="q-header"><span class="q-number-pill">Question 14</span><span class="q-type-pill">DIALOGUE ORDER</span></div>
+        <div class="q-text">
+          a. Anna: I am scared I won't do well and will disappoint you.<br>
+          b. Mum: I understand, Anna. It's normal to feel anxious during exam time—many students say, "everything seems to speed up in their head".<br>
+          c. Anna: Mum, I feel very stressed because I have too many exams this week and my mind is full of noise.<br>
+          d. Anna: Having a schedule and breaks would help me feel less overwhelmed.<br>
+          e. Mum: Let's talk about it and make a calm study plan together—what helps you focus?
+        </div>
+        <div class="options-grid" id="optgrid_14">
+          <button class="option-btn" data-correct="true" onclick="chooseAnswer(14, true, this)"><div class="opt-letter">A</div><div class="opt-text">c - b - a - e - d</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(14, false, this)"><div class="opt-letter">B</div><div class="opt-text">e - c - b - a - d</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(14, false, this)"><div class="opt-letter">C</div><div class="opt-text">e - a - b - c - d</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(14, false, this)"><div class="opt-letter">D</div><div class="opt-text">c - e - a - b - d</div></button>
+        </div>
+        <div class="explanation-box" id="exp_14">
+          <div class="exp-title">⚡ GIẢI THÍCH CHI TIẾT</div>
+          <div class="translation-bar">💬 <strong>Bước 1 - Dịch hội thoại:</strong> (c) Anna: Mẹ ơi, con thấy căng thẳng quá vì tuần này nhiều bài thi và đầu óc con rối tung. -> (b) Mẹ: Mẹ hiểu mà Anna. Lo lắng mùa thi là bình thường... -> (a) Anna: Con sợ làm bài không tốt sẽ làm mẹ thất vọng. -> (e) Mẹ: Mình cùng bàn và lập kế hoạch học tập nhé — điều gì giúp con tập trung? -> (d) Anna: Có thời gian biểu và giờ nghỉ giải lao sẽ giúp con đỡ quá tải.</div>
+          <div class="why-correct-box"><strong>Bước 3 - ✅ TẠI SAO ĐÚNG?</strong> Luân phiên lượt lời tự nhiên Anna (c) -> Mum (b) -> Anna (a) -> Mum hỏi "what helps you focus?" (e) -> Anna trả lời "Having a schedule and breaks..." (d): <span class="highlight-target">c - b - a - e - d</span>.</div>
+          <div class="why-wrong-box"><strong>Bước 4 - ❌ TẠI SAO SAI?</strong> B, C đặt lời của mẹ lên trước khi Anna kịp tâm sự; D tách rời câu hỏi ở (e) khỏi câu trả lời ở (d).</div>
+        </div>
+      </div>
+
+      <!-- Q15 -->
+      <div class="question-card">
+        <div class="q-header"><span class="q-number-pill">Question 15</span><span class="q-type-pill">EMAIL ORDER</span></div>
+        <div class="q-text">
+          To: Jack<br>
+          Hi Jack,<br>
+          a. While I iron, my brother walks the dog—something I'd much rather do.<br>
+          b. Today I have to help my mum clean the house even though I don't want to.<br>
+          c. I can't choose, so I just keep working.<br>
+          d. What are you doing today? Do you have any errands?<br>
+          e. I usually do dishes and laundry, but vacuuming the floor really annoys me!<br>
+          Bye for now, Tom
+        </div>
+        <div class="options-grid" id="optgrid_15">
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(15, false, this)"><div class="opt-letter">A</div><div class="opt-text">b - e - d - c - a</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(15, false, this)"><div class="opt-letter">B</div><div class="opt-text">b - c - e - a - d</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(15, false, this)"><div class="opt-letter">C</div><div class="opt-text">e - b - c - a - d</div></button>
+          <button class="option-btn" data-correct="true" onclick="chooseAnswer(15, true, this)"><div class="opt-letter">D</div><div class="opt-text">b - e - a - c - d</div></button>
+        </div>
+        <div class="explanation-box" id="exp_15">
+          <div class="exp-title">⚡ GIẢI THÍCH CHI TIẾT</div>
+          <div class="translation-bar">💬 <strong>Bước 1 - Dịch email:</strong> (b) Hôm nay tớ phải giúp mẹ dọn nhà dù không muốn -> (e) Tớ thường rửa bát và giặt đồ, nhưng hút bụi sàn nhà làm tớ bực mình -> (a) Trong khi tớ là quần áo thì anh trai dắt chó đi dạo - việc mà tớ thích làm hơn nhiều -> (c) Tớ chẳng được chọn nên đành tiếp tục làm -> (d) Hôm nay cậu làm gì? Có phải làm việc vặt nào không?</div>
+          <div class="why-correct-box"><strong>Bước 3 - ✅ TẠI SAO ĐÚNG?</strong> Câu (a) nói thích dắt chó đi dạo hơn dẫn trực tiếp tới câu (c) "I can't choose, so I just keep working", và câu hỏi thăm bạn (d) đứng cuối thư: <span class="highlight-target">b - e - a - c - d</span>.</div>
+          <div class="why-wrong-box"><strong>Bước 4 - ❌ TẠI SAO SAI?</strong> A đặt câu hỏi kết thư (d) ở giữa bài; B đặt "I can't choose" (c) trước khi nêu sự so sánh việc nhà với anh trai ở (a).</div>
+        </div>
+      </div>
+
+      <!-- Q16 -->
+      <div class="question-card">
+        <div class="q-header"><span class="q-number-pill">Question 16</span><span class="q-type-pill">PARAGRAPH ORDER</span></div>
+        <div class="q-text">
+          a. Research shows that upward social comparison by parents affects children's self-worth and leads them to believe they are not good enough.<br>
+          b. One study notes this habit is "positively... correlated with anxiety and school burnout"<br>
+          c. Constant comparisons—like saying "Why can't you be more like your cousin?"—can damage a child's confidence and self-esteem.<br>
+          d. Such comparisons may even cause siblings to feel jealous and distant from each other.<br>
+          e. Instead, experts recommend celebrating each child's unique strengths to build confidence and family harmony.
+        </div>
+        <div class="options-grid" id="optgrid_16">
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(16, false, this)"><div class="opt-letter">A</div><div class="opt-text">c - d - b - c - e</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(16, false, this)"><div class="opt-letter">B</div><div class="opt-text">b - d - c - e - a</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(16, false, this)"><div class="opt-letter">C</div><div class="opt-text">b - e - d - a - c</div></button>
+          <button class="option-btn" data-correct="true" onclick="chooseAnswer(16, true, this)"><div class="opt-letter">D</div><div class="opt-text">c - a - b - d - e</div></button>
+        </div>
+        <div class="explanation-box" id="exp_16">
+          <div class="exp-title">⚡ GIẢI THÍCH CHI TIẾT</div>
+          <div class="translation-bar">💬 <strong>Bước 1 - Dịch đoạn văn:</strong> (c) Câu chủ đề: Sự so sánh liên tục như "Sao con không giống anh họ con?" làm tổn hại sự tự tin của trẻ -> (a) Nghiên cứu chỉ ra so sánh xã hội ảnh hưởng giá trị bản thân trẻ -> (b) Một nghiên cứu cụ thể lưu ý thói quen này liên quan đến lo âu -> (d) Những so sánh như vậy còn khiến anh chị em ghen tị -> (e) Thay vào đó, chuyên gia khuyên nên khích lệ điểm mạnh riêng của mỗi trẻ.</div>
+          <div class="why-correct-box"><strong>Bước 3 - ✅ TẠI SAO ĐÚNG?</strong> Mở đầu bằng câu chủ đề (c) -> Dẫn chứng nghiên cứu (a -> b) -> Hệ quả mở rộng (d) -> Giải pháp kết luận "Instead, experts recommend..." (e): <span class="highlight-target">c - a - b - d - e</span>.</div>
+          <div class="why-wrong-box"><strong>Bước 4 - ❌ TẠI SAO SAI?</strong> A lặp hai chữ c và thiếu a; B và C bắt đầu bằng "One study notes this habit..." khi chưa nói "this habit" là thói quen gì.</div>
+        </div>
+      </div>
+
+      <!-- Q17 -->
+      <div class="question-card">
+        <div class="q-header"><span class="q-number-pill">Question 17</span><span class="q-type-pill">PARAGRAPH ORDER</span></div>
+        <div class="q-text">
+          a. Pam often appears in livestreams, dressed up in cute costumes, which attracts thousands of viewers watching the show together with her parents.<br>
+          b. Their strategy has led to impressive growth in followers and sales, thanks to Pam's charming presence and the family vibe.<br>
+          c. This method not only promotes products but also builds a strong emotional connection with the audience.<br>
+          d. These live sessions, sometimes lasting many hours, create a friendly and memorable atmosphere that encourages people to make purchases.<br>
+          e. The Salim family cleverly uses their daughter Pam—who is loved by many viewers—as the star of their online business.
+        </div>
+        <div class="options-grid" id="optgrid_17">
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(17, false, this)"><div class="opt-letter">A</div><div class="opt-text">b - d - c - e - a</div></button>
+          <button class="option-btn" data-correct="true" onclick="chooseAnswer(17, true, this)"><div class="opt-letter">B</div><div class="opt-text">e - a - d - b - c</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(17, false, this)"><div class="opt-letter">C</div><div class="opt-text">b - e - a - c - d</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(17, false, this)"><div class="opt-letter">D</div><div class="opt-text">b - d - e - a - c</div></button>
+        </div>
+        <div class="explanation-box" id="exp_17">
+          <div class="exp-title">⚡ GIẢI THÍCH CHI TIẾT</div>
+          <div class="why-correct-box"><strong>Bước 3 - ✅ TẠI SAO ĐÚNG?</strong> Câu giới thiệu nhân vật chính "The Salim family cleverly uses their daughter Pam..." bắt buộc đứng đầu đoạn (e) -> Pam xuất hiện trong các buổi livestream (a) -> "These live sessions..." quy chiếu về "livestreams" (d) -> Chiến lược của họ giúp tăng lượng theo dõi và doanh số (b) -> Kết luận về phương pháp này (c): <span class="highlight-target">e - a - d - b - c</span>.</div>
+          <div class="why-wrong-box"><strong>Bước 4 - ❌ TẠI SAO SAI?</strong> A, C, D bắt đầu bằng "Their strategy..." (b) khi chưa giới thiệu "They" là ai.</div>
+        </div>
+      </div>
+
+      <!-- PART 4: WHY WE ALL NEED MORE FAMILY TIME (Q18 - Q22) -->
+      <div class="section-badge-card"><span>🍽️</span><div><div>PART 4: WHY WE ALL NEED MORE FAMILY TIME (QUESTIONS 18 - 22)</div><div style="font-size: 13px; font-weight: 600;">Chọn mệnh đề/câu hoàn chỉnh điền vào chỗ trống từ câu 18 đến 22 [Adapted from Greater Good Magazine]</div></div></div>
+
+      <!-- Q18 -->
+      <div class="question-card">
+        <div class="q-header"><span class="q-number-pill">Question 18</span><span class="q-type-pill">CONTEXTUAL CLUE</span></div>
+        <div class="q-text">Ngữ cảnh: "We all know that our busy lives make it tough to connect with our families. According to a 2011 study, (18) __________. Only 30 percent eat together five times a week..."</div>
+        <div class="options-grid" id="optgrid_18">
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(18, false, this)"><div class="opt-letter">A</div><div class="opt-text">a large majority of American families eat dinner together every night</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(18, false, this)"><div class="opt-letter">B</div><div class="opt-text">approximately thirty percent of American families eat dinner together daily</div></button>
+          <button class="option-btn" data-correct="true" onclick="chooseAnswer(18, true, this)"><div class="opt-letter">C</div><div class="opt-text">only eight percent of American families eat dinner together every night</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(18, false, this)"><div class="opt-letter">D</div><div class="opt-text">over twenty percent of American families eat dinner five times a week</div></button>
+        </div>
+        <div class="explanation-box" id="exp_18">
+          <div class="exp-title">⚡ GIẢI THÍCH CHI TIẾT</div>
+          <div class="why-correct-box"><strong>Bước 3 - ✅ TẠI SAO ĐÚNG?</strong> Câu trước nêu cuộc sống bận rộn làm các gia đình khó kết nối, câu sau nêu "Chỉ 30% ăn tối cùng nhau 5 lần/tuần", nên tỷ lệ ăn tối cùng nhau <strong>mỗi tối (every night - 7 lần/tuần)</strong> phải thấp hơn hẳn: <span class="highlight-target">only eight percent of American families eat dinner together every night</span>.</div>
+          <div class="why-wrong-box"><strong>Bước 4 - ❌ TẠI SAO SAI?</strong> A trái ngược thực trạng bận rộn; B và D trùng lặp hoặc mâu thuẫn với con số 30% ăn 5 lần/tuần ở câu sau.</div>
+        </div>
+      </div>
+
+      <!-- Q19 -->
+      <div class="question-card">
+        <div class="q-header"><span class="q-number-pill">Question 19</span><span class="q-type-pill">CLAUSE LINKING</span></div>
+        <div class="q-text">Ngữ cảnh: "Only 30 percent eat together five times a week, (19) __________."</div>
+        <div class="options-grid" id="optgrid_19">
+          <button class="option-btn" data-correct="true" onclick="chooseAnswer(19, true, this)"><div class="opt-letter">A</div><div class="opt-text">and over 20 percent eat together only once a week or never</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(19, false, this)"><div class="opt-letter">B</div><div class="opt-text">yet over 80 percent barely manage to eat together sometimes</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(19, false, this)"><div class="opt-letter">C</div><div class="opt-text">besides, over 20 percent never choose to eat together at all</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(19, false, this)"><div class="opt-letter">D</div><div class="opt-text">so over 80 percent of Americans often eat together every day</div></button>
+        </div>
+        <div class="explanation-box" id="exp_19">
+          <div class="exp-title">⚡ GIẢI THÍCH CHI TIẾT</div>
+          <div class="why-correct-box"><strong>Bước 3 - ✅ TẠI SAO ĐÚNG?</strong> Bổ sung số liệu thống kê thực trạng ít ăn tối cùng nhau bằng liên từ "and" (trích chuẩn bài gốc trên <em>Greater Good Magazine</em>): <span class="highlight-target">and over 20 percent eat together only once a week or never</span>.</div>
+          <div class="why-wrong-box"><strong>Bước 4 - ❌ TẠI SAO SAI?</strong> B và D sai số liệu thống kê (30% + 80% > 100%); C dùng trạng từ "besides," sau dấu phẩy để nối 2 mệnh đề độc lập là sai dấu câu.</div>
+        </div>
+      </div>
+
+      <!-- Q20 -->
+      <div class="question-card">
+        <div class="q-header"><span class="q-number-pill">Question 20</span><span class="q-type-pill">MAIN VERB PHRASE</span></div>
+        <div class="q-text">Ngữ cảnh: "Kids who eat together regularly with their families (20) __________."</div>
+        <div class="options-grid" id="optgrid_20">
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(20, false, this)"><div class="opt-letter">A</div><div class="opt-text">are less prone to developing eating disorders or violent behavior quickly</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(20, false, this)"><div class="opt-letter">B</div><div class="opt-text">usually manage to get good grades and absolutely never use drugs</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(20, false, this)"><div class="opt-letter">C</div><div class="opt-text">often become highly confident and rarely experience any anxiety</div></button>
+          <button class="option-btn" data-correct="true" onclick="chooseAnswer(20, true, this)"><div class="opt-letter">D</div><div class="opt-text">tend to have stronger relationships and emotional well-being</div></button>
+        </div>
+        <div class="explanation-box" id="exp_20">
+          <div class="exp-title">⚡ GIẢI THÍCH CHI TIẾT</div>
+          <div class="why-correct-box"><strong>Bước 3 - ✅ TẠI SAO ĐÚNG?</strong> Khái quát lợi ích chung của trẻ ăn tối đều đặn cùng gia đình: <span class="highlight-target">tend to have stronger relationships and emotional well-being</span>.</div>
+          <div class="why-wrong-box"><strong>Bước 4 - ❌ TẠI SAO SAI?</strong> A bị lặp chi tiết với cuối đoạn 3; B và C dùng các từ cực đoan sai sự thật ("absolutely never", "rarely experience any").</div>
+        </div>
+      </div>
+
+      <!-- Q21 -->
+      <div class="question-card">
+        <div class="q-header"><span class="q-number-pill">Question 21</span><span class="q-type-pill">RELATIVE CLAUSE</span></div>
+        <div class="q-text">Ngữ cảnh: "It's about building a solid core for the whole family, a foundation (21) __________."</div>
+        <div class="options-grid" id="optgrid_21">
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(21, false, this)"><div class="opt-letter">A</div><div class="opt-text">for helping us to survive life's most difficult periods</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(21, false, this)"><div class="opt-letter">B</div><div class="opt-text">which could significantly guide us through many challenges of life</div></button>
+          <button class="option-btn" data-correct="true" onclick="chooseAnswer(21, true, this)"><div class="opt-letter">C</div><div class="opt-text">that will help all of us weather life's inevitable storms</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(21, false, this)"><div class="opt-letter">D</div><div class="opt-text">helped us to overcome life's biggest challenges inevitably</div></button>
+        </div>
+        <div class="explanation-box" id="exp_21">
+          <div class="exp-title">⚡ GIẢI THÍCH CHI TIẾT</div>
+          <div class="why-correct-box"><strong>Bước 3 - ✅ TẠI SAO ĐÚNG?</strong> Mệnh đề quan hệ bổ nghĩa cho "a foundation" kèm thành ngữ chuẩn xác trong bài gốc của <em>Greater Good Magazine</em> ("weather life's inevitable storms" - vượt qua những sóng gió không thể tránh khỏi của cuộc đời): <span class="highlight-target">that will help all of us weather life's inevitable storms</span>.</div>
+          <div class="why-wrong-box"><strong>Bước 4 - ❌ TẠI SAO SAI?</strong> A, B, D không khớp cấu trúc và văn phong nguyên bản.</div>
+        </div>
+      </div>
+
+      <!-- Q22 -->
+      <div class="question-card">
+        <div class="q-header"><span class="q-number-pill">Question 22</span><span class="q-type-pill">CONCLUDING SENTENCE</span></div>
+        <div class="q-text">Ngữ cảnh: "They are less prone to anxiety and depression, less likely to develop eating disorders, and less likely to engage in violent behavior. (22) __________."</div>
+        <div class="options-grid" id="optgrid_22">
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(22, false, this)"><div class="opt-letter">A</div><div class="opt-text">They frequently show good behavior and positive emotional regulation</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(22, false, this)"><div class="opt-letter">B</div><div class="opt-text">Also, they are less inclined to exhibit difficult behaviors or defiance</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(22, false, this)"><div class="opt-letter">C</div><div class="opt-text">However, they typically gain more confidence and socialize better with friends</div></button>
+          <button class="option-btn" data-correct="true" onclick="chooseAnswer(22, true, this)"><div class="opt-letter">D</div><div class="opt-text">They also tend to have higher self-esteem and stronger relationships with their peers</div></button>
+        </div>
+        <div class="explanation-box" id="exp_22">
+          <div class="exp-title">⚡ GIẢI THÍCH CHI TIẾT</div>
+          <div class="why-correct-box"><strong>Bước 3 - ✅ TẠI SAO ĐÚNG?</strong> Bổ sung thêm lợi ích tích cực về lòng tự trọng và quan hệ bạn bè đồng trang lứa bằng trạng từ "also" (nguyên văn bài gốc): <span class="highlight-target">They also tend to have higher self-esteem and stronger relationships with their peers</span>.</div>
+          <div class="why-wrong-box"><strong>Bước 4 - ❌ TẠI SAO SAI?</strong> A và B lặp lại ý "behavior" đã nói ở câu trước; C dùng từ nối đối lập "However" là sai mạch văn.</div>
+        </div>
+      </div>
+
+      <!-- PART 5: FAMILY TRADITIONS AND CELEBRATIONS (Q23 - Q30) -->
+      <div class="section-badge-card"><span>🎉</span><div><div>PART 5: FAMILY TRADITIONS AND CELEBRATIONS (QUESTIONS 23 - 30)</div><div style="font-size: 13px; font-weight: 600;">Đọc hiểu về truyền thống gia đình và các dịp kỷ niệm</div></div></div>
+
+      <!-- Q23 -->
+      <div class="question-card">
+        <div class="q-header"><span class="q-number-pill">Question 23</span><span class="q-type-pill">NOT MENTIONED</span></div>
+        <div class="q-text">Which of the following is NOT mentioned as a benefit of family traditions in the passage?</div>
+        <div class="options-grid" id="optgrid_23">
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(23, false, this)"><div class="opt-letter">A</div><div class="opt-text">They create happy memories that last a lifetime.</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(23, false, this)"><div class="opt-letter">B</div><div class="opt-text">They help family members understand one another better.</div></button>
+          <button class="option-btn" data-correct="true" onclick="chooseAnswer(23, true, this)"><div class="opt-letter">C</div><div class="opt-text">They support children in learning new academic skills.</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(23, false, this)"><div class="opt-letter">D</div><div class="opt-text">They give a sense of belonging and comfort during life changes.</div></button>
+        </div>
+        <div class="explanation-box" id="exp_23">
+          <div class="exp-title">⚡ GIẢI THÍCH CHI TIẾT</div>
+          <div class="why-correct-box"><strong>Bước 3 - ✅ TẠI SAO ĐÚNG?</strong> Bài đọc nhắc đến tạo kỷ niệm lâu dài (A - đoạn 1), hiểu nhau hơn (B - đoạn 3) và mang lại cảm giác thuộc về/an ủi (D - đoạn 3), nhưng hoàn toàn KHÔNG đề cập đến việc hỗ trợ trẻ học các kỹ năng học thuật ở trường (<span class="highlight-target">learning new academic skills</span>).</div>
+          <div class="why-wrong-box"><strong>Bước 4 - ❌ TẠI SAO SAI?</strong> A, B, D đều được nêu rõ trong đoạn 1 và đoạn 3.</div>
+        </div>
+      </div>
+
+      <!-- Q24 -->
+      <div class="question-card">
+        <div class="q-header"><span class="q-number-pill">Question 24</span><span class="q-type-pill">SYNONYM</span></div>
+        <div class="q-text">The word "preserve" in paragraph 1 ("Traditions help families <u>preserve</u> their beliefs, stories, and history.") is closest in meaning to __________.</div>
+        <div class="options-grid" id="optgrid_24">
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(24, false, this)"><div class="opt-letter">A</div><div class="opt-text">remember</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(24, false, this)"><div class="opt-letter">B</div><div class="opt-text">respect</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(24, false, this)"><div class="opt-letter">C</div><div class="opt-text">repeat</div></button>
+          <button class="option-btn" data-correct="true" onclick="chooseAnswer(24, true, this)"><div class="opt-letter">D</div><div class="opt-text">protect</div></button>
+        </div>
+        <div class="explanation-box" id="exp_24">
+          <div class="exp-title">⚡ GIẢI THÍCH CHI TIẾT</div>
+          <div class="why-correct-box"><strong>Bước 3 - ✅ TẠI SAO ĐÚNG?</strong> "preserve" (gìn giữ, bảo tồn, bảo vệ không bị mai một) gần nghĩa nhất với <span class="highlight-target">protect</span>.</div>
+          <div class="why-wrong-box"><strong>Bước 4 - ❌ TẠI SAO SAI?</strong> remember (nhớ), respect (tôn trọng), repeat (lặp lại) không mang nghĩa bảo tồn/bảo vệ di sản.</div>
+        </div>
+      </div>
+
+      <!-- Q25 -->
+      <div class="question-card">
+        <div class="q-header"><span class="q-number-pill">Question 25</span><span class="q-type-pill">ANTONYM</span></div>
+        <div class="q-text">The word "stability" in paragraph 3 ("Traditions offer comfort and a sense of <u>stability</u> during times of change.") is OPPOSITE in meaning to __________.</div>
+        <div class="options-grid" id="optgrid_25">
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(25, false, this)"><div class="opt-letter">A</div><div class="opt-text">balance</div></button>
+          <button class="option-btn" data-correct="true" onclick="chooseAnswer(25, true, this)"><div class="opt-letter">B</div><div class="opt-text">insecurity</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(25, false, this)"><div class="opt-letter">C</div><div class="opt-text">calmness</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(25, false, this)"><div class="opt-letter">D</div><div class="opt-text">confidence</div></button>
+        </div>
+        <div class="explanation-box" id="exp_25">
+          <div class="exp-title">⚡ GIẢI THÍCH CHI TIẾT</div>
+          <div class="why-correct-box"><strong>Bước 3 - ✅ TẠI SAO ĐÚNG?</strong> "stability" (sự ổn định, vững vàng) >< trái nghĩa là <span class="highlight-target">insecurity</span> (sự bất an, bấp bênh).</div>
+          <div class="why-wrong-box"><strong>Bước 4 - ❌ TẠI SAO SAI?</strong> balance, calmness, confidence đều mang sắc thái tích cực tương đồng.</div>
+        </div>
+      </div>
+
+      <!-- Q26 -->
+      <div class="question-card">
+        <div class="q-header"><span class="q-number-pill">Question 26</span><span class="q-type-pill">REFERENCE</span></div>
+        <div class="q-text">What do the words "they" in paragraph 3 ("When children take part in traditions, <u>they</u> learn about their family's background...") refer to?</div>
+        <div class="options-grid" id="optgrid_26">
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(26, false, this)"><div class="opt-letter">A</div><div class="opt-text">traditions</div></button>
+          <button class="option-btn" data-correct="true" onclick="chooseAnswer(26, true, this)"><div class="opt-letter">B</div><div class="opt-text">children</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(26, false, this)"><div class="opt-letter">C</div><div class="opt-text">parents</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(26, false, this)"><div class="opt-letter">D</div><div class="opt-text">grandparents</div></button>
+        </div>
+        <div class="explanation-box" id="exp_26">
+          <div class="exp-title">⚡ GIẢI THÍCH CHI TIẾT</div>
+          <div class="why-correct-box"><strong>Bước 3 - ✅ TẠI SAO ĐÚNG?</strong> Khi trẻ em (children) tham gia vào các truyền thống, <strong>chúng (they = <span class="highlight-target">children</span>)</strong> tìm hiểu được nguồn cội gia đình.</div>
+          <div class="why-wrong-box"><strong>Bước 4 - ❌ TẠI SAO SAI?</strong> A, C, D không phải là chủ ngữ của mệnh đề "When children take part in traditions".</div>
+        </div>
+      </div>
+
+      <!-- Q27 -->
+      <div class="question-card">
+        <div class="q-header"><span class="q-number-pill">Question 27</span><span class="q-type-pill">PARAPHRASE</span></div>
+        <div class="q-text">Which of the following best paraphrases the sentence in paragraph 4: <u>"These special habits and celebrations help make a family unique and resilient, reminding everyone of the love and emotional connection they share."</u>?</div>
+        <div class="options-grid" id="optgrid_27">
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(27, false, this)"><div class="opt-letter">A</div><div class="opt-text">Family traditions bring joy to members and help them enjoy spending time together in a more meaningful way.</div></button>
+          <button class="option-btn" data-correct="true" onclick="chooseAnswer(27, true, this)"><div class="opt-letter">B</div><div class="opt-text">Special family traditions build a family's identity and strength by highlighting the love and strong bonds among members.</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(27, false, this)"><div class="opt-letter">C</div><div class="opt-text">Celebrations and habits make families stronger by encouraging love and emotional expression among all family members.</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(27, false, this)"><div class="opt-letter">D</div><div class="opt-text">These special traditions improve family relationships by making family time more enjoyable and emotionally open.</div></button>
+        </div>
+        <div class="explanation-box" id="exp_27">
+          <div class="exp-title">⚡ GIẢI THÍCH CHI TIẾT</div>
+          <div class="why-correct-box"><strong>Bước 3 - ✅ TẠI SAO ĐÚNG?</strong> "unique" = "identity" (bản sắc riêng); "resilient" = "strength" (sức mạnh kiên cường); "reminding everyone of the love and emotional connection" = "highlighting the love and strong bonds": <span class="highlight-target">Đáp án B</span>.</div>
+          <div class="why-wrong-box"><strong>Bước 4 - ❌ TẠI SAO SAI?</strong> A, C, D bỏ sót ý "unique" (bản sắc riêng biệt của gia đình).</div>
+        </div>
+      </div>
+
+      <!-- Q28 -->
+      <div class="question-card">
+        <div class="q-header"><span class="q-number-pill">Question 28</span><span class="q-type-pill">TRUE STATEMENT</span></div>
+        <div class="q-text">Which of the following statements is TRUE according to the passage?</div>
+        <div class="options-grid" id="optgrid_28">
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(28, false, this)"><div class="opt-letter">A</div><div class="opt-text">Family traditions are only for big holidays and special events</div></button>
+          <button class="option-btn" data-correct="true" onclick="chooseAnswer(28, true, this)"><div class="opt-letter">B</div><div class="opt-text">Traditions help children learn about their family's past and values</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(28, false, this)"><div class="opt-letter">C</div><div class="opt-text">It is always easy to keep family traditions alive, no matter what</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(28, false, this)"><div class="opt-letter">D</div><div class="opt-text">Families should never create new traditions; they must only follow old ones</div></button>
+        </div>
+        <div class="explanation-box" id="exp_28">
+          <div class="exp-title">⚡ GIẢI THÍCH CHI TIẾT</div>
+          <div class="why-correct-box"><strong>Bước 3 - ✅ TẠI SAO ĐÚNG?</strong> Đoạn 3 nêu rõ truyền thống giúp trẻ tìm hiểu về "family's background" (quá khứ/nguồn cội) và "pass down important family values" (các giá trị gia đình): <span class="highlight-target">Đáp án B</span>.</div>
+          <div class="why-wrong-box"><strong>Bước 4 - ❌ TẠI SAO SAI?</strong> A sai từ "only"; C sai vì đoạn 4 nói "can sometimes be challenging"; D sai vì đoạn 4 nói "Families can also create new traditions".</div>
+        </div>
+      </div>
+
+      <!-- Q29 -->
+      <div class="question-card">
+        <div class="q-header"><span class="q-number-pill">Question 29</span><span class="q-type-pill">PARAGRAPH LOCATION</span></div>
+        <div class="q-text">In which paragraph does the writer give examples of both holiday traditions and regular family activities?</div>
+        <div class="options-grid" id="optgrid_29">
+          <button class="option-btn" data-correct="true" onclick="chooseAnswer(29, true, this)"><div class="opt-letter">A</div><div class="opt-text">Paragraph 2</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(29, false, this)"><div class="opt-letter">B</div><div class="opt-text">Paragraph 1</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(29, false, this)"><div class="opt-letter">C</div><div class="opt-text">Paragraph 4</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(29, false, this)"><div class="opt-letter">D</div><div class="opt-text">Paragraph 3</div></button>
+        </div>
+        <div class="explanation-box" id="exp_29">
+          <div class="exp-title">⚡ GIẢI THÍCH CHI TIẾT</div>
+          <div class="why-correct-box"><strong>Bước 3 - ✅ TẠI SAO ĐÚNG?</strong> Ở <span class="highlight-target">Paragraph 2</span>, tác giả nêu ví dụ về dịp lễ (Christmas, Tet, Birthdays) và các hoạt động thường kỳ (movie night every Friday, camping every summer).</div>
+          <div class="why-wrong-box"><strong>Bước 4 - ❌ TẠI SAO SAI?</strong> Đoạn 1 giới thiệu chung; Đoạn 3 nêu giá trị giáo dục; Đoạn 4 nêu thách thức.</div>
+        </div>
+      </div>
+
+      <!-- Q30 -->
+      <div class="question-card">
+        <div class="q-header"><span class="q-number-pill">Question 30</span><span class="q-type-pill">PARAGRAPH LOCATION</span></div>
+        <div class="q-text">In which paragraph does the writer mention the challenges of maintaining traditions but also emphasize their value despite difficulties?</div>
+        <div class="options-grid" id="optgrid_30">
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(30, false, this)"><div class="opt-letter">A</div><div class="opt-text">Paragraph 2</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(30, false, this)"><div class="opt-letter">B</div><div class="opt-text">Paragraph 1</div></button>
+          <button class="option-btn" data-correct="true" onclick="chooseAnswer(30, true, this)"><div class="opt-letter">C</div><div class="opt-text">Paragraph 4</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(30, false, this)"><div class="opt-letter">D</div><div class="opt-text">Paragraph 3</div></button>
+        </div>
+        <div class="explanation-box" id="exp_30">
+          <div class="exp-title">⚡ GIẢI THÍCH CHI TIẾT</div>
+          <div class="why-correct-box"><strong>Bước 3 - ✅ TẠI SAO ĐÚNG?</strong> Ở đầu <span class="highlight-target">Paragraph 4</span>, tác giả viết: "Keeping traditions alive can sometimes be challenging. However, it is always worth the effort."</div>
+          <div class="why-wrong-box"><strong>Bước 4 - ❌ TẠI SAO SAI?</strong> Đoạn 1, 2, 3 không nói về những khó khăn khi duy trì truyền thống.</div>
+        </div>
+      </div>
+
+      <!-- PART 6: A NEW LOOK AT MODERN FAMILY (Q31 - Q40) -->
+      <div class="section-badge-card"><span>🏡</span><div><div>PART 6: A NEW LOOK AT MODERN FAMILY (QUESTIONS 31 - 40)</div><div style="font-size: 13px; font-weight: 600;">Đọc hiểu về các cấu trúc gia đình hiện đại và các giá trị cốt lõi</div></div></div>
+
+      <!-- Q31 -->
+      <div class="question-card">
+        <div class="q-header"><span class="q-number-pill">Question 31</span><span class="q-type-pill">SENTENCE INSERTION</span></div>
+        <div class="q-text">Where in paragraph 2 does the following sentence best fit: <strong>"This means they share home jobs and childcare more."</strong>?<br><em>"One big change is that both parents now often work. [I] Parents try to share tasks fairly, changing old ideas about who does what. [II] Also, more families have only one parent. [III] They show remarkable resilience. [IV]"</em></div>
+        <div class="options-grid" id="optgrid_31">
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(31, false, this)"><div class="opt-letter">A</div><div class="opt-text">[I]</div></button>
+          <button class="option-btn" data-correct="true" onclick="chooseAnswer(31, true, this)"><div class="opt-letter">B</div><div class="opt-text">[II]</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(31, false, this)"><div class="opt-letter">C</div><div class="opt-text">[III]</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(31, false, this)"><div class="opt-letter">D</div><div class="opt-text">[IV]</div></button>
+        </div>
+        <div class="explanation-box" id="exp_31">
+          <div class="exp-title">⚡ GIẢI THÍCH CHI TIẾT</div>
+          <div class="why-correct-box"><strong>Bước 3 - ✅ TẠI SAO ĐÚNG?</strong> Câu trước vị trí <span class="highlight-target">[II]</span> nói: "Parents try to share tasks fairly, changing old ideas about who does what." Câu chèn vào giải thích rõ điều đó có nghĩa là gì ("This means they share home jobs and childcare more"), trước khi chuyển sang ý mới ("Also, more families have only one parent").</div>
+          <div class="why-wrong-box"><strong>Bước 4 - ❌ TẠI SAO SAI?</strong> [III] và [IV] đang nói về các gia đình đơn thân (only one parent) nên không thể dùng "they share home jobs".</div>
+        </div>
+      </div>
+
+      <!-- Q32 -->
+      <div class="question-card">
+        <div class="q-header"><span class="q-number-pill">Question 32</span><span class="q-type-pill">PHRASE MEANING</span></div>
+        <div class="q-text">The phrase "strong family bonds" in paragraph 1 is closest in meaning to __________.</div>
+        <div class="options-grid" id="optgrid_32">
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(32, false, this)"><div class="opt-letter">A</div><div class="opt-text">old family ways</div></button>
+          <button class="option-btn" data-correct="true" onclick="chooseAnswer(32, true, this)"><div class="opt-letter">B</div><div class="opt-text">close family relationships (hoặc D. powerful family connections)</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(32, false, this)"><div class="opt-letter">C</div><div class="opt-text">difficult family situations</div></button>
+          <button class="option-btn" data-correct="true" onclick="chooseAnswer(32, true, this)"><div class="opt-letter">D</div><div class="opt-text">powerful family connections</div></button>
+        </div>
+        <div class="explanation-box" id="exp_32">
+          <div class="exp-title">⚡ GIẢI THÍCH CHI TIẾT</div>
+          <div class="why-correct-box"><strong>Bước 3 - ✅ TẠI SAO ĐÚNG?</strong> "strong family bonds" (mối gắn kết gia đình bền chặt) đồng nghĩa trực tiếp với cả <span class="highlight-target">close family relationships</span> và <span class="highlight-target">powerful family connections</span> (hệ thống ghi nhận đúng cho cả B và D).</div>
+          <div class="why-wrong-box"><strong>Bước 4 - ❌ TẠI SAO SAI?</strong> A (lối sống cũ) và C (hoàn cảnh khó khăn) sai nghĩa hoàn toàn.</div>
+        </div>
+      </div>
+
+      <!-- Q33 -->
+      <div class="question-card">
+        <div class="q-header"><span class="q-number-pill">Question 33</span><span class="q-type-pill">REFERENCE</span></div>
+        <div class="q-text">What does the word "They" in paragraph 2 ("Also, more families have only one parent. <u>They</u> show remarkable resilience.") refer to?</div>
+        <div class="options-grid" id="optgrid_33">
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(33, false, this)"><div class="opt-letter">A</div><div class="opt-text">grandparents and friends (A)</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(33, false, this)"><div class="opt-letter">B</div><div class="opt-text">grandparents and friends (B)</div></button>
+          <button class="option-btn" data-correct="true" onclick="chooseAnswer(33, true, this)"><div class="opt-letter">C</div><div class="opt-text">single-parent families</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(33, false, this)"><div class="opt-letter">D</div><div class="opt-text">old ideas about roles</div></button>
+        </div>
+        <div class="explanation-box" id="exp_33">
+          <div class="exp-title">⚡ GIẢI THÍCH CHI TIẾT</div>
+          <div class="why-correct-box"><strong>Bước 3 - ✅ TẠI SAO ĐÚNG?</strong> Câu liền trước nhắc đến "families [that] have only one parent", tức là <span class="highlight-target">single-parent families</span> (các gia đình đơn thân).</div>
+          <div class="why-wrong-box"><strong>Bước 4 - ❌ TẠI SAO SAI?</strong> A, B, D không phải là chủ ngữ của câu liền trước.</div>
+        </div>
+      </div>
+
+      <!-- Q34 -->
+      <div class="question-card">
+        <div class="q-header"><span class="q-number-pill">Question 34</span><span class="q-type-pill">NOT MENTIONED</span></div>
+        <div class="q-text">According to paragraph 2, which of the following is NOT mentioned as a result of both parents often working?</div>
+        <div class="options-grid" id="optgrid_34">
+          <button class="option-btn" data-correct="true" onclick="chooseAnswer(34, true, this)"><div class="opt-letter">A</div><div class="opt-text">Parents spend more time commuting than being home.</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(34, false, this)"><div class="opt-letter">B</div><div class="opt-text">Parents share more tasks at home.</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(34, false, this)"><div class="opt-letter">C</div><div class="opt-text">People change ideas about who does what.</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(34, false, this)"><div class="opt-letter">D</div><div class="opt-text">Parents share more in taking care of children.</div></button>
+        </div>
+        <div class="explanation-box" id="exp_34">
+          <div class="exp-title">⚡ GIẢI THÍCH CHI TIẾT</div>
+          <div class="why-correct-box"><strong>Bước 3 - ✅ TẠI SAO ĐÚNG?</strong> Đoạn 2 hoàn toàn KHÔNG đề cập đến việc cha mẹ tốn thời gian đi lại (commuting) nhiều hơn ở nhà: <span class="highlight-target">Đáp án A</span>.</div>
+          <div class="why-wrong-box"><strong>Bước 4 - ❌ TẠI SAO SAI?</strong> B, C, D đều được nêu trực tiếp trong đoạn 2.</div>
+        </div>
+      </div>
+
+      <!-- Q35 -->
+      <div class="question-card">
+        <div class="q-header"><span class="q-number-pill">Question 35</span><span class="q-type-pill">PARAGRAPH SUMMARY</span></div>
+        <div class="q-text">Which of the following best summarizes the main point of paragraph 1?</div>
+        <div class="options-grid" id="optgrid_35">
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(35, false, this)"><div class="opt-letter">A</div><div class="opt-text">In the past, families had only one structure, but now there are many new and different forms.</div></button>
+          <button class="option-btn" data-correct="true" onclick="chooseAnswer(35, true, this)"><div class="opt-letter">B</div><div class="opt-text">Family bonds stay strong even though different ideas about living together are very common now.</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(35, false, this)"><div class="opt-letter">C</div><div class="opt-text">Understanding modern family life helps us know society better because family ideas have changed.</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(35, false, this)"><div class="opt-letter">D</div><div class="opt-text">Family structures are confusing today, and people are unsure how to define them.</div></button>
+        </div>
+        <div class="explanation-box" id="exp_35">
+          <div class="exp-title">⚡ GIẢI THÍCH CHI TIẾT</div>
+          <div class="why-correct-box"><strong>Bước 3 - ✅ TẠI SAO ĐÚNG?</strong> Đoạn 1 nêu sự thay đổi của các kiểu gia đình hiện nay nhưng nhấn mạnh "Even with these differences, strong family bonds help people stay connected": <span class="highlight-target">Đáp án B</span>.</div>
+          <div class="why-wrong-box"><strong>Bước 4 - ❌ TẠI SAO SAI?</strong> A thiếu ý chính về "strong family bonds"; C quá hẹp; D sai thông tin ("confusing").</div>
+        </div>
+      </div>
+
+      <!-- Q36 -->
+      <div class="question-card">
+        <div class="q-header"><span class="q-number-pill">Question 36</span><span class="q-type-pill">ANTONYM</span></div>
+        <div class="q-text">The word "resilience" in paragraph 2 ("They show remarkable <u>resilience</u>.") is OPPOSITE in meaning to __________.</div>
+        <div class="options-grid" id="optgrid_36">
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(36, false, this)"><div class="opt-letter">A</div><div class="opt-text">confidence</div></button>
+          <button class="option-btn" data-correct="true" onclick="chooseAnswer(36, true, this)"><div class="opt-letter">B</div><div class="opt-text">weakness</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(36, false, this)"><div class="opt-letter">C</div><div class="opt-text">independence</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(36, false, this)"><div class="opt-letter">D</div><div class="opt-text">flexibility</div></button>
+        </div>
+        <div class="explanation-box" id="exp_36">
+          <div class="exp-title">⚡ GIẢI THÍCH CHI TIẾT</div>
+          <div class="why-correct-box"><strong>Bước 3 - ✅ TẠI SAO ĐÚNG?</strong> "resilience" (sự kiên cường, khả năng phục hồi vượt khó mạnh mẽ) >< trái nghĩa là <span class="highlight-target">weakness</span> (sự yếu đuối, yếu ớt).</div>
+          <div class="why-wrong-box"><strong>Bước 4 - ❌ TẠI SAO SAI?</strong> confidence, independence, flexibility đều là phẩm chất tích cực.</div>
+        </div>
+      </div>
+
+      <!-- Q37 -->
+      <div class="question-card">
+        <div class="q-header"><span class="q-number-pill">Question 37</span><span class="q-type-pill">TRUE STATEMENT</span></div>
+        <div class="q-text">Which of the following statements is TRUE according to the passage?</div>
+        <div class="options-grid" id="optgrid_37">
+          <button class="option-btn" data-correct="true" onclick="chooseAnswer(37, true, this)"><div class="opt-letter">A</div><div class="opt-text">Single-parent families often get support from other relatives and friends.</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(37, false, this)"><div class="opt-letter">B</div><div class="opt-text">Families are stronger when both parents can share responsibilities.</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(37, false, this)"><div class="opt-letter">C</div><div class="opt-text">Blended families are only for couples who do not have any children.</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(37, false, this)"><div class="opt-letter">D</div><div class="opt-text">Old values are less important in today's modern homes.</div></button>
+        </div>
+        <div class="explanation-box" id="exp_37">
+          <div class="exp-title">⚡ GIẢI THÍCH CHI TIẾT</div>
+          <div class="why-correct-box"><strong>Bước 3 - ✅ TẠI SAO ĐÚNG?</strong> Đoạn 2 viết rõ về các gia đình đơn thân: "These families often get help from grandparents and friends." -> khớp hoàn toàn với <span class="highlight-target">Đáp án A</span>.</div>
+          <div class="why-wrong-box"><strong>Bước 4 - ❌ TẠI SAO SAI?</strong> B không được so sánh như vậy trong bài; C sai định nghĩa "blended families"; D trái ngược đoạn 4.</div>
+        </div>
+      </div>
+
+      <!-- Q38 -->
+      <div class="question-card">
+        <div class="q-header"><span class="q-number-pill">Question 38</span><span class="q-type-pill">PARAPHRASE</span></div>
+        <div class="q-text">Which best paraphrases the sentence in paragraph 1: <u>"These changes show new thoughts about what people want and how they live together."</u>?</div>
+        <div class="options-grid" id="optgrid_38">
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(38, false, this)"><div class="opt-letter">A</div><div class="opt-text">Different family types are caused by financial pressure.</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(38, false, this)"><div class="opt-letter">B</div><div class="opt-text">People now often want to live alone without any family around them.</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(38, false, this)"><div class="opt-letter">C</div><div class="opt-text">The new family forms are confusing for most people.</div></button>
+          <button class="option-btn" data-correct="true" onclick="chooseAnswer(38, true, this)"><div class="opt-letter">D</div><div class="opt-text">These new family forms mean people have different wishes and ways of life.</div></button>
+        </div>
+        <div class="explanation-box" id="exp_38">
+          <div class="exp-title">⚡ GIẢI THÍCH CHI TIẾT</div>
+          <div class="why-correct-box"><strong>Bước 3 - ✅ TẠI SAO ĐÚNG?</strong> "what people want" = "different wishes" (những mong muốn khác nhau); "how they live together" = "ways of life" (lối sống): <span class="highlight-target">Đáp án D</span>.</div>
+          <div class="why-wrong-box"><strong>Bước 4 - ❌ TẠI SAO SAI?</strong> A, B, C đều thêm thắt thông tin sai lệch không có trong câu gốc.</div>
+        </div>
+      </div>
+
+      <!-- Q39 -->
+      <div class="question-card">
+        <div class="q-header"><span class="q-number-pill">Question 39</span><span class="q-type-pill">INFERENCE</span></div>
+        <div class="q-text">Which of the following can be inferred from the passage?</div>
+        <div class="options-grid" id="optgrid_39">
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(39, false, this)"><div class="opt-letter">A</div><div class="opt-text">New families always face the same serious emotional problems.</div></button>
+          <button class="option-btn" data-correct="true" onclick="chooseAnswer(39, true, this)"><div class="opt-letter">B</div><div class="opt-text">Strong family communication and understanding help different family types succeed.</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(39, false, this)"><div class="opt-letter">C</div><div class="opt-text">Love is enough for modern families to solve all problems.</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(39, false, this)"><div class="opt-letter">D</div><div class="opt-text">People will always find it very difficult to accept changes in their family structures.</div></button>
+        </div>
+        <div class="explanation-box" id="exp_39">
+          <div class="exp-title">⚡ GIẢI THÍCH CHI TIẾT</div>
+          <div class="why-correct-box"><strong>Bước 3 - ✅ TẠI SAO ĐÚNG?</strong> Đoạn cuối viết: "Talking openly and understanding others build strong family bonds." -> suy ra giao tiếp tốt và sự thấu hiểu giúp các kiểu gia đình khác nhau gắn kết và phát triển vững mạnh: <span class="highlight-target">Đáp án B</span>.</div>
+          <div class="why-wrong-box"><strong>Bước 4 - ❌ TẠI SAO SAI?</strong> A, C, D dùng từ tuyệt đối cực đoan ("always", "enough... to solve all problems").</div>
+        </div>
+      </div>
+
+      <!-- Q40 -->
+      <div class="question-card">
+        <div class="q-header"><span class="q-number-pill">Question 40</span><span class="q-type-pill">MAIN IDEA</span></div>
+        <div class="q-text">Which of the following best summarizes the main idea of the entire passage?</div>
+        <div class="options-grid" id="optgrid_40">
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(40, false, this)"><div class="opt-letter">A</div><div class="opt-text">Modern family life is mostly about how both parents must now work to make enough money.</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(40, false, this)"><div class="opt-letter">B</div><div class="opt-text">The main problem for modern families is how to find enough private space for everyone living together.</div></button>
+          <button class="option-btn" data-correct="true" onclick="chooseAnswer(40, true, this)"><div class="opt-letter">C</div><div class="opt-text">Families have changed in many ways, but important values like love still keep them strong.</div></button>
+          <button class="option-btn" data-correct="false" onclick="chooseAnswer(40, false, this)"><div class="opt-letter">D</div><div class="opt-text">Old ideas about family are completely gone, and people do not follow them anymore.</div></button>
+        </div>
+        <div class="explanation-box" id="exp_40">
+          <div class="exp-title">⚡ GIẢI THÍCH CHI TIẾT</div>
+          <div class="why-correct-box"><strong>Bước 3 - ✅ TẠI SAO ĐÚNG?</strong> Toàn bài nói về sự đa dạng và thay đổi của các mô hình gia đình hiện đại, nhưng các giá trị cốt lõi như tình yêu thương và sự tôn trọng vẫn giữ cho gia đình bền chặt: <span class="highlight-target">Đáp án C</span>.</div>
+          <div class="why-wrong-box"><strong>Bước 4 - ❌ TẠI SAO SAI?</strong> A và B chỉ là chi tiết nhỏ; D sai sự thật.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="submit-bar">
+      <button class="btn-submit" onclick="submitTest()">
+        <span>🚀</span> NỘP BÀI & XEM ĐÁNH GIÁ TỔNG KẾT
+      </button>
+    </div>
+
+    <!-- BANNER TUYỂN SINH CẬP NHẬT CHUẨN XÁC THEO YÊU CẦU CỦA CÔ LÊ HẰNG -->
+    <div class="promo-banner">
+      <div class="promo-title">
+        PH HS đăng kí học tiếng anh Khối 1 đến 12, IELTS vui lòng liên hệ Ms Lê Hằng English - zalo 0584 965 348 - Online + Offline tại Linh Đàm
+      </div>
+      <div>
+        <div class="promo-phone-pill">
+          <span>📲</span> Zalo: 0584 965 348 (Ms Lê Hằng English)
+        </div>
+      </div>
+      <div class="promo-sub">
+        ✨ Hình thức học: Online + Offline tại Linh Đàm · Luyện thi chuyên sâu Khối 1 → 12 & IELTS hiệu quả cao!
+      </div>
+    </div>
+
+  </div>
+
+  <div id="resultModal" class="modal-overlay">
+    <div class="modal-card">
+      <div style="font-size: 56px; margin-bottom: 10px;" id="modalEmoji">🎉</div>
+      <h2 style="font-size: 26px; font-weight: 900; color: #2D3436; margin-bottom: 6px;">KẾT QUẢ UNIT 1 - TEST 1</h2>
+      <div class="modal-score" id="modalScoreText">0 / 40</div>
+      <div id="modalPercent" style="font-size: 16px; font-weight: 800; color: #636E72;">(0%)</div>
+      <div class="modal-feedback" id="modalTeacherNote"></div>
+      <button class="btn-retry" onclick="restartTest()">🔄 Làm lại bài từ đầu (Đảo đáp án mới)</button>
+    </div>
+  </div>
+
+  <script>
+    let answeredQuestions = {};
+    let totalQuestions = 40;
+
+    function shuffleAllOptions() {
+      const letters = ['A', 'B', 'C', 'D'];
+      document.querySelectorAll('.options-grid').forEach(grid => {
+        const buttons = Array.from(grid.children);
+        for (let i = buttons.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          grid.appendChild(buttons[j]);
+          buttons.splice(j, 1);
+        }
+        Array.from(grid.children).forEach((btn, idx) => {
+          const letterEl = btn.querySelector('.opt-letter');
+          if (letterEl && letters[idx]) {
+            letterEl.innerText = letters[idx];
+          }
+        });
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', shuffleAllOptions);
+
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    let audioCtx = null;
+
+    function initAudio() {
+      if (!audioCtx) audioCtx = new AudioContext();
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+    }
+
+    function playCorrectSound() {
+      initAudio();
+      [523.25, 659.25, 783.99, 1046.50].forEach((freq, index) => {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = "sine";
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime + index * 0.08);
+        gain.gain.setValueAtTime(0.18, audioCtx.currentTime + index * 0.08);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + index * 0.08 + 0.35);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start(audioCtx.currentTime + index * 0.08);
+        osc.stop(audioCtx.currentTime + index * 0.08 + 0.36);
+      });
+    }
+
+    function playWrongSound() {
+      initAudio();
+      [329.63, 293.66, 220.00].forEach((freq, index) => {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = "triangle";
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime + index * 0.12);
+        gain.gain.setValueAtTime(0.2, audioCtx.currentTime + index * 0.12);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + index * 0.12 + 0.28);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start(audioCtx.currentTime + index * 0.12);
+        osc.stop(audioCtx.currentTime + index * 0.12 + 0.3);
+      });
+    }
+
+    const canvas = document.getElementById('confetti-canvas');
+    const ctx = canvas.getContext('2d');
+    let confettiParticles = [];
+
+    function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    function triggerConfetti() {
+      confettiParticles = [];
+      const colors = ['#FF4757', '#FDCB6E', '#00C9A7', '#8854C0', '#0984E3', '#00D26A'];
+      for (let i = 0; i < 65; i++) {
+        confettiParticles.push({
+          x: window.innerWidth / 2 + (Math.random() - 0.5) * 200,
+          y: window.innerHeight / 2 - 100,
+          w: Math.random() * 10 + 6,
+          h: Math.random() * 8 + 4,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          vx: (Math.random() - 0.5) * 14,
+          vy: Math.random() * -12 - 4,
+          gravity: 0.45,
+          rotation: Math.random() * 360,
+          rotationSpeed: (Math.random() - 0.5) * 12,
+          opacity: 1
+        });
+      }
+      animateConfetti();
+    }
+
+    let confettiAnimId = null;
+    function animateConfetti() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      let alive = false;
+      confettiParticles.forEach(p => {
+        p.x += p.vx; p.y += p.vy; p.vy += p.gravity; p.rotation += p.rotationSpeed; p.opacity -= 0.012;
+        if (p.opacity > 0) {
+          alive = true;
+          ctx.save();
+          ctx.translate(p.x, p.y);
+          ctx.rotate((p.rotation * Math.PI) / 180);
+          ctx.fillStyle = p.color;
+          ctx.globalAlpha = p.opacity;
+          ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+          ctx.restore();
+        }
+      });
+      if (alive) confettiAnimId = requestAnimationFrame(animateConfetti);
+      else ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+    function chooseAnswer(qid, isCorrect, btn) {
+      if (answeredQuestions[qid]) return;
+      answeredQuestions[qid] = { isCorrect: isCorrect };
+
+      const grid = document.getElementById('optgrid_' + qid);
+
+      if (isCorrect) {
+        btn.classList.add('correct');
+        playCorrectSound();
+        triggerConfetti();
+      } else {
+        btn.classList.add('wrong');
+        playWrongSound();
+        const correctBtn = grid.querySelector('.option-btn[data-correct="true"]');
+        if (correctBtn) {
+          correctBtn.classList.add('highlight-correct-answer');
+        }
+      }
+
+      grid.querySelectorAll('.option-btn').forEach(b => b.classList.add('disabled'));
+
+      const expBox = document.getElementById('exp_' + qid);
+      if (expBox) expBox.style.display = 'block';
+
+      updateProgress();
+    }
+
+    function updateProgress() {
+      const keys = Object.keys(answeredQuestions);
+      const answeredCount = keys.length;
+      const correctCount = keys.filter(k => answeredQuestions[k].isCorrect).length;
+
+      document.getElementById('starCounter').innerText = correctCount;
+      document.getElementById('correctCounter').innerText = correctCount;
+      document.getElementById('progressBarFill').style.width = ((answeredCount / totalQuestions) * 100) + '%';
+    }
+
+    function submitTest() {
+      const keys = Object.keys(answeredQuestions);
+      const correctCount = keys.filter(k => answeredQuestions[k].isCorrect).length;
+      const percentage = Math.round((correctCount / totalQuestions) * 100);
+
+      document.getElementById('modalScoreText').innerText = correctCount + ' / ' + totalQuestions + ' CÂU ĐÚNG';
+      document.getElementById('modalPercent').innerText = '(' + percentage + '%)';
+
+      let teacherNote = "";
+      let emoji = "🎉";
+
+      if (percentage < 50) {
+        emoji = "💪";
+        teacherNote = "“Điểm lần này chưa cao lắm, con cố gắng đọc kỹ giải thích đáp án và làm lại nha. Cô tin con sẽ làm tốt hơn ở lần sau!”<br><br>— <strong>Ms Lê Hằng English</strong>";
+      } else if (percentage >= 50 && percentage <= 80) {
+        emoji = "🌟";
+        teacherNote = "“Con đã có tiến bộ khá ổn rồi, con cố gắng đọc kỹ giải thích đáp án và làm lại nha. Cô tin con sẽ làm tốt hơn ở lần sau!”<br><br>— <strong>Ms Lê Hằng English</strong>";
+      } else {
+        emoji = "🏆";
+        teacherNote = "“Làm tốt lắm, con cố gắng ring điểm 10 ở lần sau nha!”<br><br>— <strong>Ms Lê Hằng English</strong>";
+      }
+
+      document.getElementById('modalEmoji').innerText = emoji;
+      document.getElementById('modalTeacherNote').innerHTML = teacherNote;
+      document.getElementById('resultModal').style.display = 'flex';
+    }
+
+    function restartTest() {
+      answeredQuestions = {};
+      document.getElementById('resultModal').style.display = 'none';
+      document.querySelectorAll('.option-btn').forEach(btn => {
+        btn.classList.remove('correct', 'wrong', 'disabled', 'highlight-correct-answer');
+      });
+      document.querySelectorAll('.explanation-box').forEach(box => {
+        box.style.display = 'none';
+      });
+      shuffleAllOptions();
+      updateProgress();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
